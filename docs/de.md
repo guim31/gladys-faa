@@ -94,7 +94,7 @@ Die Uhrzeiten sind in der Zeitzone deines Gladys. Die Pfeile zeigen, ob die FAA 
 **US-Flughafenstatus**: eine Zeile pro verfolgtem Flughafen (mit angelegtem Gerät), der am
 stärksten gestörte zuerst: grün bei normalem Betrieb, orange bei Abflug- oder
 Ankunftsverspätungen, rot bei einem Ground Delay Program, einem Ground Stop oder einer Schließung.
-Die Bildunterschrift nennt die Ursachen.
+Die Bildunterschrift nennt die Ursachen. Das Widget zeigt höchstens 10 Flughäfen: die am stärksten gestörten.
 
 ## Szenen-Auslöser
 
@@ -108,8 +108,7 @@ du wählst):
 
 Wähle im Auslöser die gewünschten Ereignisse. Die Variablen liefern den Flughafen, das Ereignis,
 den Status in Worten, die Stufe und die vorherige Stufe, die Ursache, die durchschnittlichen
-Abflug- und Ankunftsverspätungen und das voraussichtliche Ende. Beim ersten Lesen nach dem Start
-von Gladys oder der Integration löst nichts aus: Was schon da war, ist keine Neuigkeit.
+Abflug- und Ankunftsverspätungen und das voraussichtliche Ende. Beim ersten Lesen nach dem Start der Integration löst nichts aus: Was schon da war, ist keine Neuigkeit. Das Ende der Verspätungen wird erst nach zwei Lesevorgängen in Folge ohne Verspätung gemeldet (Abflugverspätungen kommen und gehen um die 15-Minuten-Schwelle der FAA).
 
 ## Szenen-Aktion
 
@@ -138,8 +137,7 @@ dafür kein Kontingent. Flughäfen, die in der Antwort fehlen, laufen normal.
 - **Ground Stop**: Die FAA hält die Flüge zum Flughafen an ihrem Abflugort fest, meist wegen
   Gewittern oder schlechter Sicht. Der Status nennt das geplante Ende.
 - **Ground Delay Program**: Die FAA dosiert die Flüge zum Flughafen und weist ihnen eine Wartezeit
-  vor dem Start zu; ihre durchschnittliche und maximale Verspätung zählen als
-  Ankunftsverspätungen.
+  vor dem Start zu; ihre durchschnittliche und maximale Verspätung zählen als Ankunftsverspätungen. Ein für später angekündigtes Program zählt ab seinem Beginn.
 - **Abflug- und Ankunftsverspätungen**: vom Flughafen gemeldet, als Spanne („16–30 min“) mit
   Tendenz.
 - **Schließung**: ein NOTAM, das den Flughafen gerade schließt. Schließungen mit täglichen Zeiten
@@ -165,6 +163,7 @@ dafür kein Kontingent. Flughäfen, die in der Antwort fehlen, laufen normal.
 - Einschränkungen für die allgemeine Luftfahrt, Enteisung und Pistenkonfigurationen werden nicht
   angezeigt.
 - Die Funktionsnamen werden beim Anlegen des Geräts festgelegt.
+- Schließungen von Sonnenuntergang bis Sonnenaufgang („SS-SR“) zählen für ihren ganzen Zeitraum.
 - Bis zu 20 Flughäfen.
 
 ## Danksagungen

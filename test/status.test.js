@@ -198,3 +198,50 @@ test('airports: by code, by ICAO code, by city, unknown codes', () => {
   assert.deepEqual(findAirports('Paris'), []);
   assert.deepEqual(findAirports('x'), []);
 });
+
+test('a ground delay program announced for later does not count yet', () => {
+  // BOS at 15:56 UTC: a program from 17:00 UTC, departure delays already.
+  let { statuses } = read('arrivals');
+  assert.equal(statuses.get('BOS').groundDelay, null);
+  assert.equal(statuses.get('BOS').level, 1);
+  ({ statuses } = read('arrivals', Date.parse('2025-11-06T17:00:00Z')));
+  assert.equal(statuses.get('BOS').groundDelay.average, 84);
+  assert.equal(statuses.get('BOS').level, 2);
+});
+
+test('empty blocks and missing averages are no event and no zero', () => {
+  const at = Date.parse('2026-07-09T20:49:44Z');
+  const [status] = parseFeed(
+    [
+      {
+        airportId: 'JFK',
+        groundStop: {},
+        groundDelay: [],
+        airportClosure: {},
+        departureDelay: {
+          averageDelay: null,
+          arrivalDeparture: { min: '16 minutes', max: '30 minutes' },
+          reason: 'WX:Wind',
+        },
+        arrivalDelay: {},
+      },
+    ],
+    at,
+  ).values();
+  assert.equal(status.groundStop, null);
+  assert.equal(status.groundDelay, null);
+  assert.equal(status.closure, null);
+  assert.equal(status.arrival, null);
+  assert.equal(status.level, 1);
+  assert.equal(status.departure.average, 23);
+});
+
+test('a NOTAM with several schedules: every one counts', () => {
+  const text = 'AD AP CLSD MON-FRI 0500-1100 SAT 0500-1300';
+  // Saturday 24 October 2026, 12:00 UTC: the Saturday hours.
+  assert.deepEqual(scheduledWindow(text, Date.parse('2026-10-24T12:00:00Z')), {
+    end: Date.parse('2026-10-24T13:00:00Z'),
+  });
+  // Friday at 12:00 UTC: open.
+  assert.equal(scheduledWindow(text, Date.parse('2026-10-23T12:00:00Z')), null);
+});

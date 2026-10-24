@@ -93,8 +93,7 @@ retrasos aumenten (↗) o disminuyan (↘).
 
 **Estado aeropuertos EE. UU.**: una fila por aeropuerto seguido (con un dispositivo creado), el más
 afectado primero: verde para operaciones normales, naranja para retrasos de salidas o llegadas,
-rojo para un programa de retrasos en tierra, una parada en tierra o un cierre. La leyenda indica
-las causas.
+rojo para un programa de retrasos en tierra, una parada en tierra o un cierre. La leyenda indica las causas. El widget muestra 10 aeropuertos como máximo: los más afectados.
 
 ## Disparador de escena
 
@@ -108,8 +107,7 @@ que usted elija):
 
 Elija los eventos que desee en el disparador. Las variables dan el aeropuerto, el evento, el estado
 en palabras, el nivel y el nivel anterior, la causa, los retrasos medios de salidas y llegadas y el
-fin previsto. Nada se activa en la primera lectura tras el arranque de Gladys o de la integración:
-lo que ya estaba no es noticia.
+fin previsto. Nada se activa en la primera lectura tras el arranque de la integración: lo que ya estaba no es noticia. El fin de los retrasos solo se anuncia tras dos lecturas seguidas sin retrasos (los retrasos de salidas van y vienen en torno al umbral de 15 minutos de la FAA).
 
 ## Acción de escena
 
@@ -138,8 +136,7 @@ cuota. Los aeropuertos ausentes de la respuesta funcionan con normalidad.
 - **Parada en tierra** (ground stop): la FAA retiene en su origen los vuelos con destino al
   aeropuerto, casi siempre por tormentas o mala visibilidad. El estado indica su fin previsto.
 - **Programa de retrasos en tierra** (ground delay program): la FAA regula los vuelos con destino
-  al aeropuerto y les asigna un retraso antes del despegue; sus retrasos medio y máximo cuentan
-  como retrasos de llegadas.
+  al aeropuerto y les asigna un retraso antes del despegue; sus retrasos medio y máximo cuentan como retrasos de llegadas. Un programa anunciado para más tarde cuenta desde su inicio.
 - **Retrasos de salidas y llegadas**: comunicados por el aeropuerto, como un intervalo
   («16–30 min») con una tendencia.
 - **Cierre**: un NOTAM que cierra el aeropuerto ahora. Los cierres con horario diario
@@ -165,6 +162,7 @@ cuota. Los aeropuertos ausentes de la respuesta funcionan con normalidad.
 - No se muestran las restricciones para la aviación general, el deshielo ni las configuraciones de
   pistas.
 - Los nombres de funciones se fijan al crear el dispositivo.
+- Los cierres de la puesta a la salida del sol («SS-SR») cuentan durante todo su periodo.
 - Hasta 20 aeropuertos.
 
 ## Créditos

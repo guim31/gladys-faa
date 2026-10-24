@@ -38,6 +38,8 @@ export const EVENTS = [
 ];
 
 export const MAX_AIRPORTS = 20;
+// Reads without delays before `delay_lifted`.
+const CLEAR_READS = 2;
 const LANGS = ['en', 'fr', 'de', 'es'];
 // A value that does not change is published again this often, so that Gladys
 // does not show it as stale ("no recent value" after 48 h).
@@ -330,6 +332,12 @@ export class FaaService {
   detect(airport, status, previousStatus) {
     const current = flagsOf(status);
     const previous = this.flags.get(airport.code);
+    // Departure delays come and go around the FAA's 15-minute threshold: the
+    // end of the delays waits for a second read without any.
+    current.clearReads = current.delay ? 0 : (previous?.clearReads ?? 0) + 1;
+    if (previous?.delay && !current.delay && current.clearReads < CLEAR_READS) {
+      current.delay = true;
+    }
     this.flags.set(airport.code, current);
     if (!previous) {
       return [];

@@ -89,7 +89,7 @@ delays to grow (↗) or shrink (↘).
 
 **US airport status**: a row per followed airport (with a created device), the most disrupted
 first: green for normal operations, orange for departure or arrival delays, red for a ground delay
-program, a ground stop or a closure. The caption gives the causes.
+program, a ground stop or a closure. The caption gives the causes. The widget shows 10 airports at most: the most disrupted ones.
 
 ## Scene trigger
 
@@ -102,8 +102,7 @@ program, a ground stop or a closure. The caption gives the causes.
 
 Pick the events you want in the trigger. The variables give the airport, the event, the status in
 words, the level and the previous level, the cause, the average departure and arrival delays and
-the expected end. Nothing fires at the first read after Gladys or the integration starts: what was
-already there is not news.
+the expected end. Nothing fires at the first read after the integration starts: what was already there is not news. Delays are over only after two reads in a row without any (departure delays often come and go around the FAA's 15-minute threshold).
 
 ## Scene action
 
@@ -130,7 +129,7 @@ airports absent from the answer run normally.
 - **Ground stop**: the FAA holds the flights bound for the airport at their origin, usually for
   storms or low visibility. The status gives its planned end.
 - **Ground delay program**: the FAA meters the flights bound for the airport and assigns them a
-  delay before take-off; its average and maximum count as arrival delays.
+  delay before take-off; its average and maximum count as arrival delays. A program announced for later counts from its start.
 - **Departure and arrival delays**: reported by the airport, as a range (“16–30 min”) with a trend.
 - **Closure**: a NOTAM closing the airport now. Closures with daily hours (“DLY 0430-0945”) count
   only during those hours; closures that let scheduled flights in, and restrictions for general
@@ -154,6 +153,7 @@ airports absent from the answer run normally.
 - No flight-level data: the delays are the airport's, not your flight's.
 - Restrictions for general aviation, de-icing and runway configurations are not shown.
 - Feature names are set when the device is created.
+- Closures by sunrise and sunset (“SS-SR”) count for their whole period.
 - Up to 20 airports.
 
 ## Credits

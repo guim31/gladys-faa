@@ -265,7 +265,10 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - **Fermetures** : la FAA garde un NOTAM à horaires quotidiens toute la période, jour et nuit (PVD
   « DLY 0430-0945 » listé à 20:49 UTC ; MRY « TUE-SAT 0701-1200 ») : on ne compte que la plage
   horaire (UTC, y compris à cheval sur minuit). « CLSD EXC SKED ACFT » (ALO) laisse passer les vols
-  réguliers : pas une fermeture pour un voyageur. Une fermeture pas encore commencée ne compte pas.
+  réguliers : pas une fermeture pour un voyageur. Une fermeture pas encore commencée ne compte pas, un
+  programme de retards non plus (la FAA les publie une à deux heures avant : BOS à 15:56 pour 17:00).
+  Un NOTAM peut enchaîner plusieurs plages (toutes lues) ; « SS-SR » (soleil) n'est pas décodé.
+- Bloc vide (`{}` ou `[]`) = pas d'événement ; `averageDelay` vide ou `null` n'est pas 0.
 - Les archives Wayback de `airport-events` sont servies **gzip** même avec `id_` : `gunzip`.
 
 ## Choix
@@ -276,7 +279,8 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
   signalé et du programme), deux `text/text` sans historique.
 - Déclencheur unique `airport_status_changed`, événement en `multi_select` (`closed`, `reopened`,
   `ground_stop_*`, `delay_*` ; « delay » = programme ou retards départ/arrivée, l'arrêt au sol a
-  ses propres événements). Mémoire en RAM, rien à la première lecture.
+  ses propres événements). Mémoire en RAM, rien à la première lecture. `delay_lifted` attend deux
+  lectures de suite sans retard (les retards au départ oscillent autour du seuil de 15 min).
 - 5 ou 10 min, une requête pour tous les aéroports ; 20 aéroports au plus. Heures affichées dans le
   fuseau de Gladys (`TZ`), avec la date au-delà de 20 h.
 - Catégorie `services` (le vocabulaire du store n'a pas de « transports »), transport `cloud`.

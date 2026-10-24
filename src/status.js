@@ -141,13 +141,17 @@ export function causeOfReason(reason) {
 }
 
 const minutes = (value) => {
+  // Number(null) and Number('') are 0: a missing value is not "no delay".
+  if (value === null || value === undefined || String(value).trim() === '') {
+    return null;
+  }
   const number = Number(value);
   return Number.isFinite(number) && number >= 0 ? Math.round(number) : null;
 };
 
 /** A departure or arrival delay: average, minimum, maximum (minutes), trend, cause. */
 function parseFlowDelay(raw) {
-  if (!raw || typeof raw !== 'object') {
+  if (!isEvent(raw, ['averageDelay', 'arrivalDeparture', 'reason'])) {
     return null;
   }
   const range = raw.arrivalDeparture ?? {};
@@ -167,8 +171,22 @@ function parseFlowDelay(raw) {
   };
 }
 
+/**
+ * An event block of the feed: an object with at least one of `fields` set.
+ * An empty object or list (were the FAA to send one instead of null) is no
+ * event: it would show every listed airport as stopped or closed.
+ */
+function isEvent(raw, fields) {
+  return (
+    Boolean(raw) &&
+    typeof raw === 'object' &&
+    !Array.isArray(raw) &&
+    fields.some((field) => raw[field] !== null && raw[field] !== undefined && raw[field] !== '')
+  );
+}
+
 function parseGroundStop(raw) {
-  if (!raw || typeof raw !== 'object') {
+  if (!isEvent(raw, ['impactingCondition', 'endTime', 'startTime', 'programExpirationTime'])) {
     return null;
   }
   return {
@@ -178,8 +196,18 @@ function parseGroundStop(raw) {
   };
 }
 
-function parseGroundDelay(raw) {
-  if (!raw || typeof raw !== 'object') {
+/**
+ * A ground delay program in force: one announced for later (the FAA files
+ * them an hour or two ahead, BOS at 15:56 for 17:00) does not count yet,
+ * like a closure not started.
+ */
+function parseGroundDelay(raw, now) {
+  if (!isEvent(raw, ['impactingCondition', 'endTime', 'startTime', 'avgDelay', 'maxDelay'])) {
+    return null;
+  }
+  const start = Date.parse(raw.startTime ?? '');
+  const finish = Date.parse(raw.endTime ?? '');
+  if ((Number.isFinite(start) && start > now) || (Number.isFinite(finish) && finish <= now)) {
     return null;
   }
   const average = minutes(raw.avgDelay) ?? 0;
@@ -193,9 +221,11 @@ function parseGroundDelay(raw) {
 
 const DAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const DAY = DAYS.join('|');
-// "DLY 0430-0945", "TUE-SAT 0701-1200", "DLY 2200-1000" (across midnight), UTC.
+// "DLY 0430-0945", "TUE-SAT 0701-1200", "DLY 2200-1000" (across midnight), UTC;
+// a NOTAM may chain several ("MON-FRI 0500-1100 SAT 0500-1300").
 const SCHEDULE = new RegExp(
   `\\b(DLY|(${DAY})(?:-(${DAY}))?)\\s+(\\d{2})(\\d{2})-(\\d{2})(\\d{2})\\b`,
+  'g',
 );
 const DAY_MS = 24 * 3600 * 1000;
 
@@ -205,10 +235,22 @@ const DAY_MS = 24 * 3600 * 1000;
  * the feed for its whole period, day and night.
  */
 export function scheduledWindow(text, now) {
-  const match = SCHEDULE.exec(text);
-  if (!match) {
+  const matches = [...String(text).matchAll(SCHEDULE)];
+  if (matches.length === 0) {
     return undefined;
   }
+  // The window in force that ends last, when several overlap.
+  let found = null;
+  for (const match of matches) {
+    const window = windowOf(match, now);
+    if (window && (!found || window.end > found.end)) {
+      found = window;
+    }
+  }
+  return found;
+}
+
+function windowOf(match, now) {
   const [, , first, last, startH, startM, endH, endM] = match;
   const startMinutes = Number(startH) * 60 + Number(startM);
   const length = (Number(endH) * 60 + Number(endM) - startMinutes + 1440) % 1440 || 1440;
@@ -243,7 +285,7 @@ export function scheduledWindow(text, now) {
  * ACFT" lets the scheduled flights in: not a closure for a traveller.
  */
 function parseClosure(raw, now) {
-  if (!raw || typeof raw !== 'object') {
+  if (!isEvent(raw, ['simpleText', 'text', 'startTime', 'endTime'])) {
     return null;
   }
   const start = Date.parse(raw.startTime ?? '');
@@ -294,7 +336,7 @@ export function parseAirport(raw, now) {
   const status = normalStatus(String(raw.airportId).toUpperCase());
   status.longName = String(raw.airportLongName ?? '').trim();
   status.groundStop = parseGroundStop(raw.groundStop);
-  status.groundDelay = parseGroundDelay(raw.groundDelay);
+  status.groundDelay = parseGroundDelay(raw.groundDelay, now);
   status.departure = parseFlowDelay(raw.departureDelay);
   status.arrival = parseFlowDelay(raw.arrivalDelay);
   status.closure = parseClosure(raw.airportClosure, now);

@@ -94,7 +94,7 @@ ce que les retards augmentent (↗) ou diminuent (↘).
 
 **État des aéroports US** : une ligne par aéroport suivi (avec un appareil créé), le plus perturbé
 en premier : vert pour un trafic normal, orange pour des retards au départ ou à l'arrivée, rouge
-pour un programme de retards au sol, un arrêt au sol ou une fermeture. La légende donne les motifs.
+pour un programme de retards au sol, un arrêt au sol ou une fermeture. La légende donne les motifs. Le widget montre 10 aéroports au plus : les plus perturbés.
 
 ## Déclencheur de scène
 
@@ -108,8 +108,7 @@ vous choisissez) :
 
 Choisissez les événements voulus dans le déclencheur. Les variables donnent l'aéroport,
 l'événement, l'état en clair, le niveau et le niveau précédent, le motif, les retards moyens au
-départ et à l'arrivée et la fin prévue. Rien ne se déclenche à la première lecture après le
-démarrage de Gladys ou de l'intégration : ce qui était déjà là n'est pas une nouvelle.
+départ et à l'arrivée et la fin prévue. Rien ne se déclenche à la première lecture après le démarrage de l'intégration : ce qui était déjà là n'est pas une nouvelle. La fin des retards n'est annoncée qu'après deux lectures de suite sans retard (les retards au départ vont et viennent autour du seuil de 15 minutes de la FAA).
 
 ## Action de scène
 
@@ -138,8 +137,7 @@ publie aucun quota. Les aéroports absents de la réponse fonctionnent normaleme
   l'aéroport, le plus souvent pour des orages ou une mauvaise visibilité. L'état donne sa fin
   prévue.
 - **Programme de retards au sol** (ground delay program) : la FAA régule les vols à destination
-  de l'aéroport et leur fixe un retard avant le décollage ; ses retards moyen et maximal comptent
-  comme retards à l'arrivée.
+  de l'aéroport et leur fixe un retard avant le décollage ; ses retards moyen et maximal comptent comme retards à l'arrivée. Un programme annoncé pour plus tard compte à partir de son début.
 - **Retards au départ et à l'arrivée** : signalés par l'aéroport, sous forme de fourchette
   (« 16–30 min ») avec une tendance.
 - **Fermeture** : un NOTAM qui ferme l'aéroport en ce moment. Les fermetures à horaires quotidiens
@@ -165,6 +163,7 @@ publie aucun quota. Les aéroports absents de la réponse fonctionnent normaleme
 - Les restrictions pour l'aviation générale, le dégivrage et les configurations de pistes ne sont
   pas affichés.
 - Les noms de fonctionnalités sont fixés à la création de l'appareil.
+- Les fermetures du coucher au lever du soleil (« SS-SR ») comptent sur toute leur période.
 - Jusqu'à 20 aéroports.
 
 ## Crédits

@@ -151,15 +151,15 @@ test('trigger: silent first read, then closed, reopened, declared and lifted', a
     'LGA reopened',
     'LGA ground_stop_declared',
     'LGA delay_declared',
-    // Everything lifted.
+    // Ground stops lifted; delays not yet (one read without them).
     'JFK ground_stop_lifted',
-    'JFK delay_lifted',
     'EWR ground_stop_lifted',
-    'EWR delay_lifted',
     'LGA ground_stop_lifted',
-    'LGA delay_lifted',
-    // LGA closes for the night again.
+    // Second read without delays: over. LGA closes for the night again.
+    'JFK delay_lifted',
+    'EWR delay_lifted',
     'LGA closed',
+    'LGA delay_lifted',
   ]);
   assert.ok(events.every((event) => event.key === TRIGGERS.CHANGED));
   const declared = events[0].data;
@@ -170,14 +170,13 @@ test('trigger: silent first read, then closed, reopened, declared and lifted', a
   assert.equal(declared.reason, 'Orages');
   assert.equal(declared.departure_delay, 30);
   assert.equal(declared.arrival_delay, 117);
-  // The scenario runs in October on the July feed: the end is a date away.
-  assert.equal(declared.until, '9 juil., 23:45');
-  assert.match(declared.status, /^Arrêt au sol jusqu'à 9 juil\., 23:45/);
+  assert.equal(declared.until, '23:45');
+  assert.match(declared.status, /^Arrêt au sol jusqu'à 23:45/);
   const lifted = events.find((event) => event.data.event === 'ground_stop_lifted').data;
   assert.equal(lifted.level, 0);
   assert.equal(lifted.previous_level, 3);
   assert.equal(lifted.until, '');
-  const closed = events.at(-1).data;
+  const closed = events.find((event) => event.data.event === 'closed').data;
   assert.equal(closed.until, '12:00');
   assert.equal(closed.reason, 'Fermeture (NOTAM)');
 });
