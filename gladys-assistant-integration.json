@@ -1,177 +1,634 @@
 {
   "manifest_version": 1,
   "type": "device",
-  "name": "Demo Devices Template",
+  "name": "FAA Airport Status",
   "description": {
-    "en": "Starter template showing sensors, a switch, a dimmable light and a smart plug.",
-    "fr": "Template de démarrage : capteurs, interrupteur, lampe variable et prise connectée."
+    "en": "US airport delays from the FAA: ground stops, delay programs, departure and arrival delays, closures",
+    "fr": "Aéroports américains (FAA) : arrêts au sol, régulations, retards au départ, à l'arrivée, fermetures",
+    "de": "Verspätungen an US-Flughäfen (FAA): Ground Stops, Delay Programs, Abflug- und Ankunftsverspätungen.",
+    "es": "Retrasos en aeropuertos de EE. UU. (FAA): paradas en tierra, programas de retraso, salidas, llegadas"
   },
   "version": "1.0.0",
-  "docker_image": "ghcr.io/gladysassistant/integration-template-js:1.0.0",
+  "docker_image": "ghcr.io/guim31/gladys-faa:1.0.0",
   "gladys_version": ">=5.1.0",
-  "cover_image": "https://raw.githubusercontent.com/GladysAssistant/integration-template-js/master/cover.png",
-  "categories": ["lighting", "security", "environment"],
-  "transports": ["local", "cloud"],
+  "cover_image": "https://raw.githubusercontent.com/guim31/gladys-faa/main/cover.png",
+  "categories": ["services"],
+  "transports": ["cloud"],
   "config_schema": [
     {
       "key": "intro",
       "type": "section",
-      "label": { "en": "Getting started", "fr": "Pour commencer" },
+      "label": {
+        "en": "How it works",
+        "fr": "Comment ça marche",
+        "de": "So funktioniert es",
+        "es": "Cómo funciona"
+      },
       "description": {
-        "en": "The demo weather station reads real data from the free Open-Meteo API: pick the coordinates to observe. No account, no API key.",
-        "fr": "La station météo de démonstration lit de vraies données via l'API gratuite Open-Meteo : choisissez les coordonnées à observer. Pas de compte, pas de clé d'API."
+        "en": "Follow airports with the action below, then create their devices in the Discover tab. Everything comes from the FAA's open NAS Status feed: no account, no key.",
+        "fr": "Suivez des aéroports avec l'action ci-dessous, puis créez leurs appareils dans l'onglet Découverte. Tout vient du flux ouvert NAS Status de la FAA : pas de compte, pas de clé.",
+        "de": "Verfolge Flughäfen mit der Aktion unten und lege dann ihre Geräte im Tab „Entdecken“ an. Alles stammt aus dem offenen NAS-Status-Feed der FAA: kein Konto, kein Schlüssel.",
+        "es": "Siga aeropuertos con la acción de abajo y luego cree sus dispositivos en la pestaña Descubrir. Todo procede del flujo abierto NAS Status de la FAA: sin cuenta ni clave."
       },
       "links": [
         {
-          "url": "https://open-meteo.com/en/docs",
-          "label": { "en": "Open-Meteo documentation", "fr": "Documentation Open-Meteo" }
+          "url": "https://github.com/guim31/gladys-faa/blob/main/docs/en.md",
+          "label": {
+            "en": "Setup guide",
+            "fr": "Guide d'installation",
+            "de": "Anleitung",
+            "es": "Guía de instalación"
+          }
+        },
+        {
+          "url": "https://nasstatus.faa.gov",
+          "label": {
+            "en": "FAA NAS Status",
+            "fr": "FAA NAS Status",
+            "de": "FAA NAS Status",
+            "es": "FAA NAS Status"
+          }
         }
       ]
     },
     {
-      "key": "latitude",
-      "type": "number",
-      "label": { "en": "Latitude", "fr": "Latitude" },
-      "description": {
-        "en": "Latitude used for the demo weather sensor.",
-        "fr": "Latitude utilisée par le capteur météo de démonstration."
-      },
-      "placeholder": { "en": "e.g. 48.8566", "fr": "ex. 48.8566" },
-      "required": true,
-      "default": 48.8566,
-      "min": -90,
-      "max": 90
-    },
-    {
-      "key": "longitude",
-      "type": "number",
-      "label": { "en": "Longitude", "fr": "Longitude" },
-      "description": {
-        "en": "Longitude used for the demo weather sensor.",
-        "fr": "Longitude utilisée par le capteur météo de démonstration."
-      },
-      "placeholder": { "en": "e.g. 2.3522", "fr": "ex. 2.3522" },
-      "required": true,
-      "default": 2.3522,
-      "min": -180,
-      "max": 180
-    },
-    {
-      "key": "unit",
+      "key": "language",
       "type": "select",
-      "label": { "en": "Temperature unit", "fr": "Unité de température" },
+      "label": {
+        "en": "Language of the texts",
+        "fr": "Langue des textes",
+        "de": "Sprache der Texte",
+        "es": "Idioma de los textos"
+      },
+      "description": {
+        "en": "Language of the feature names, of the statuses and of the sentences sent to your scenes. Feature names are set when a device is created.",
+        "fr": "Langue des noms de fonctionnalités, des états et des phrases envoyées à vos scènes. Les noms sont fixés à la création de l'appareil.",
+        "de": "Sprache der Funktionsnamen, der Status und der Sätze für deine Szenen. Die Namen werden beim Anlegen des Geräts festgelegt.",
+        "es": "Idioma de los nombres de funciones, de los estados y de las frases enviadas a sus escenas. Los nombres se fijan al crear el dispositivo."
+      },
       "required": false,
-      "default": "celsius",
+      "default": "fr",
       "options": [
-        { "value": "celsius", "label": { "en": "Celsius", "fr": "Celsius" } },
-        { "value": "fahrenheit", "label": { "en": "Fahrenheit", "fr": "Fahrenheit" } }
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
       ]
     },
     {
-      "key": "poll_frequency",
-      "type": "number",
-      "label": { "en": "Refresh interval (s)", "fr": "Intervalle de rafraîchissement (s)" },
+      "key": "refresh_interval",
+      "type": "select",
+      "label": {
+        "en": "Refresh interval",
+        "fr": "Fréquence de mise à jour",
+        "de": "Aktualisierungsintervall",
+        "es": "Intervalo de actualización"
+      },
       "description": {
-        "en": "How often sensors are polled, in seconds (one minute minimum).",
-        "fr": "Fréquence d'interrogation des capteurs, en secondes (une minute minimum)."
+        "en": "How often the FAA is read: a single request for every followed airport.",
+        "fr": "Fréquence de lecture de la FAA : une seule requête pour tous les aéroports suivis.",
+        "de": "Wie oft die FAA gelesen wird: eine einzige Anfrage für alle verfolgten Flughäfen.",
+        "es": "Frecuencia de lectura de la FAA: una sola petición para todos los aeropuertos seguidos."
       },
       "required": false,
-      "default": 300,
-      "min": 60,
-      "max": 3600
+      "default": "300",
+      "options": [
+        {
+          "value": "300",
+          "label": {
+            "en": "5 minutes",
+            "fr": "5 minutes",
+            "de": "5 Minuten",
+            "es": "5 minutos"
+          }
+        },
+        {
+          "value": "600",
+          "label": {
+            "en": "10 minutes",
+            "fr": "10 minutes",
+            "de": "10 Minuten",
+            "es": "10 minutos"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
-      "key": "test_weather",
-      "label": { "en": "Test the weather provider", "fr": "Tester le fournisseur météo" },
-      "timeout_seconds": 30
-    },
-    {
-      "key": "identify",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
+      "key": "add_airport",
+      "label": {
+        "en": "Follow an airport",
+        "fr": "Suivre un aéroport",
+        "de": "Flughafen verfolgen",
+        "es": "Seguir un aeropuerto"
+      },
+      "description": {
+        "en": "Adds a US airport to the Discover tab, by its FAA code or the name of its city.",
+        "fr": "Ajoute un aéroport américain à l'onglet Découverte, par son code FAA ou le nom de sa ville.",
+        "de": "Fügt einen US-Flughafen über seinen FAA-Code oder den Namen seiner Stadt dem Tab „Entdecken“ hinzu.",
+        "es": "Añade un aeropuerto de EE. UU. a la pestaña Descubrir, por su código FAA o el nombre de su ciudad."
+      },
       "fields": [
         {
-          "key": "device",
-          "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "key": "airport",
+          "type": "string",
+          "required": true,
+          "label": {
+            "en": "Airport code or city",
+            "fr": "Code ou ville de l'aéroport",
+            "de": "Flughafencode oder Stadt",
+            "es": "Código o ciudad del aeropuerto"
+          },
+          "placeholder": {
+            "en": "e.g. JFK, ATL, San Francisco",
+            "fr": "ex. JFK, ATL, San Francisco",
+            "de": "z. B. JFK, ATL, San Francisco",
+            "es": "p. ej. JFK, ATL, San Francisco"
+          }
         }
       ]
+    },
+    {
+      "key": "remove_airport",
+      "label": {
+        "en": "Stop following an airport",
+        "fr": "Ne plus suivre un aéroport",
+        "de": "Flughafen nicht mehr verfolgen",
+        "es": "Dejar de seguir un aeropuerto"
+      },
+      "description": {
+        "en": "Removes a followed airport. Its device stays in Gladys until you delete it.",
+        "fr": "Retire un aéroport suivi. Son appareil reste dans Gladys jusqu'à ce que vous le supprimiez.",
+        "de": "Entfernt einen verfolgten Flughafen. Das Gerät bleibt in Gladys, bis du es löschst.",
+        "es": "Elimina un aeropuerto seguido. Su dispositivo permanece en Gladys hasta que lo borre."
+      },
+      "fields": [
+        {
+          "key": "airport",
+          "type": "string",
+          "required": true,
+          "label": {
+            "en": "Airport code",
+            "fr": "Code de l'aéroport",
+            "de": "Flughafencode",
+            "es": "Código del aeropuerto"
+          },
+          "placeholder": {
+            "en": "e.g. JFK",
+            "fr": "ex. JFK",
+            "de": "z. B. JFK",
+            "es": "p. ej. JFK"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "label": {
+        "en": "Status",
+        "fr": "État",
+        "de": "Status",
+        "es": "Estado"
+      },
+      "description": {
+        "en": "Lists the followed airports, their status and the last read of the FAA.",
+        "fr": "Liste les aéroports suivis, leur état et la dernière lecture de la FAA.",
+        "de": "Listet die verfolgten Flughäfen, ihren Status und das letzte Lesen der FAA auf.",
+        "es": "Muestra los aeropuertos seguidos, su estado y la última lectura de la FAA."
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "key": "airports",
+      "label": {
+        "en": "US airport status",
+        "fr": "État des aéroports US",
+        "de": "US-Flughafenstatus",
+        "es": "Estado aeropuertos EE. UU."
+      },
+      "description": {
+        "en": "The status of every followed airport, the most disrupted first.",
+        "fr": "L'état de chaque aéroport suivi, le plus perturbé en premier.",
+        "de": "Der Status jedes verfolgten Flughafens, der am stärksten gestörte zuerst.",
+        "es": "El estado de cada aeropuerto seguido, el más afectado primero."
+      },
+      "icon": "navigation"
     }
   ],
   "scene_triggers": [
     {
-      "key": "motion_detected",
-      "label": { "en": "Motion detected", "fr": "Mouvement détecté" },
+      "key": "airport_status_changed",
+      "label": {
+        "en": "Airport status changed",
+        "fr": "État d'un aéroport modifié",
+        "de": "Flughafenstatus geändert",
+        "es": "Estado de un aeropuerto cambiado"
+      },
       "description": {
-        "en": "A demo motion sensor saw a person or an animal move.",
-        "fr": "Un détecteur de démonstration a vu bouger une personne ou un animal."
+        "en": "The FAA declares or lifts delays, a ground stop or a closure at a followed airport.",
+        "fr": "La FAA déclare ou lève des retards, un arrêt au sol ou une fermeture dans un aéroport suivi.",
+        "de": "Die FAA meldet oder beendet Verspätungen, einen Ground Stop oder eine Schließung an einem verfolgten Flughafen.",
+        "es": "La FAA declara o levanta retrasos, una parada en tierra o un cierre en un aeropuerto seguido."
       },
       "fields": [
         {
-          "key": "device",
+          "key": "airport",
           "type": "select",
           "source": "devices",
-          "label": { "en": "Sensor", "fr": "Détecteur" }
+          "required": false,
+          "label": {
+            "en": "Airport",
+            "fr": "Aéroport",
+            "de": "Flughafen",
+            "es": "Aeropuerto"
+          }
         },
         {
-          "key": "target",
+          "key": "event",
           "type": "multi_select",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" },
+          "label": {
+            "en": "Events",
+            "fr": "Événements",
+            "de": "Ereignisse",
+            "es": "Eventos"
+          },
           "options": [
-            { "value": "person", "label": { "en": "Person", "fr": "Personne" } },
-            { "value": "animal", "label": { "en": "Animal", "fr": "Animal" } }
+            {
+              "value": "closed",
+              "label": {
+                "en": "Airport closed",
+                "fr": "Aéroport fermé",
+                "de": "Flughafen geschlossen",
+                "es": "Aeropuerto cerrado"
+              }
+            },
+            {
+              "value": "reopened",
+              "label": {
+                "en": "Airport reopened",
+                "fr": "Aéroport rouvert",
+                "de": "Flughafen wieder geöffnet",
+                "es": "Aeropuerto reabierto"
+              }
+            },
+            {
+              "value": "ground_stop_declared",
+              "label": {
+                "en": "Ground stop declared",
+                "fr": "Arrêt au sol déclaré",
+                "de": "Ground Stop verhängt",
+                "es": "Parada en tierra declarada"
+              }
+            },
+            {
+              "value": "ground_stop_lifted",
+              "label": {
+                "en": "Ground stop lifted",
+                "fr": "Arrêt au sol levé",
+                "de": "Ground Stop aufgehoben",
+                "es": "Parada en tierra levantada"
+              }
+            },
+            {
+              "value": "delay_declared",
+              "label": {
+                "en": "Delays declared",
+                "fr": "Retards déclarés",
+                "de": "Verspätungen gemeldet",
+                "es": "Retrasos declarados"
+              }
+            },
+            {
+              "value": "delay_lifted",
+              "label": {
+                "en": "Delays over",
+                "fr": "Fin des retards",
+                "de": "Verspätungen vorbei",
+                "es": "Fin de los retrasos"
+              }
+            }
           ]
         }
       ],
       "variables": [
         {
-          "key": "target",
+          "key": "airport_code",
           "type": "string",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" }
+          "label": {
+            "en": "Airport code",
+            "fr": "Code de l'aéroport",
+            "de": "Flughafencode",
+            "es": "Código del aeropuerto"
+          }
+        },
+        {
+          "key": "airport_name",
+          "type": "string",
+          "label": {
+            "en": "Airport",
+            "fr": "Aéroport",
+            "de": "Flughafen",
+            "es": "Aeropuerto"
+          }
+        },
+        {
+          "key": "event",
+          "type": "string",
+          "label": {
+            "en": "Event",
+            "fr": "Événement",
+            "de": "Ereignis",
+            "es": "Evento"
+          }
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "label": {
+            "en": "Status",
+            "fr": "État",
+            "de": "Status",
+            "es": "Estado"
+          }
+        },
+        {
+          "key": "level",
+          "type": "number",
+          "label": {
+            "en": "Disruption level (0 to 3)",
+            "fr": "Niveau de perturbation (0 à 3)",
+            "de": "Störungsstufe (0 bis 3)",
+            "es": "Nivel de incidencia (0 a 3)"
+          }
+        },
+        {
+          "key": "previous_level",
+          "type": "number",
+          "label": {
+            "en": "Previous level",
+            "fr": "Niveau précédent",
+            "de": "Vorherige Stufe",
+            "es": "Nivel anterior"
+          }
+        },
+        {
+          "key": "reason",
+          "type": "string",
+          "label": {
+            "en": "Cause",
+            "fr": "Motif",
+            "de": "Ursache",
+            "es": "Causa"
+          }
+        },
+        {
+          "key": "departure_delay",
+          "type": "number",
+          "label": {
+            "en": "Departure delay (min)",
+            "fr": "Retard au départ (min)",
+            "de": "Abflugverspätung (Min.)",
+            "es": "Retraso de salidas (min)"
+          }
+        },
+        {
+          "key": "arrival_delay",
+          "type": "number",
+          "label": {
+            "en": "Arrival delay (min)",
+            "fr": "Retard à l'arrivée (min)",
+            "de": "Ankunftsverspätung (Min.)",
+            "es": "Retraso de llegadas (min)"
+          }
+        },
+        {
+          "key": "until",
+          "type": "string",
+          "label": {
+            "en": "Expected end",
+            "fr": "Fin prévue",
+            "de": "Voraussichtliches Ende",
+            "es": "Fin prevista"
+          }
         }
       ]
     }
   ],
   "scene_actions": [
     {
-      "key": "identify_device",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "description": {
-        "en": "Make a device signal itself (the demo light blinks).",
-        "fr": "Fait se signaler un appareil (la lampe de démonstration clignote)."
+      "key": "get_airport_status",
+      "label": {
+        "en": "Get an airport status",
+        "fr": "Lire l'état d'un aéroport",
+        "de": "Flughafenstatus abrufen",
+        "es": "Obtener el estado de un aeropuerto"
       },
-      "timeout_seconds": 15,
+      "description": {
+        "en": "The status of a followed airport, as numbers and as a sentence for a message or a speaker.",
+        "fr": "L'état d'un aéroport suivi, en nombres et en phrase pour un message ou une enceinte.",
+        "de": "Der Status eines verfolgten Flughafens, als Zahlen und als Satz für eine Nachricht oder einen Lautsprecher.",
+        "es": "El estado de un aeropuerto seguido, como números y como frase para un mensaje o un altavoz."
+      },
       "fields": [
         {
-          "key": "device",
+          "key": "airport",
           "type": "select",
           "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "required": true,
+          "label": {
+            "en": "Airport",
+            "fr": "Aéroport",
+            "de": "Flughafen",
+            "es": "Aeropuerto"
+          }
         }
       ],
       "outputs": [
         {
-          "key": "signalled",
-          "type": "boolean",
-          "label": { "en": "Device signalled", "fr": "Appareil signalé" }
+          "key": "sentence",
+          "type": "string",
+          "label": {
+            "en": "Sentence",
+            "fr": "Phrase",
+            "de": "Satz",
+            "es": "Frase"
+          }
+        },
+        {
+          "key": "airport_code",
+          "type": "string",
+          "label": {
+            "en": "Airport code",
+            "fr": "Code de l'aéroport",
+            "de": "Flughafencode",
+            "es": "Código del aeropuerto"
+          }
+        },
+        {
+          "key": "airport_name",
+          "type": "string",
+          "label": {
+            "en": "Airport",
+            "fr": "Aéroport",
+            "de": "Flughafen",
+            "es": "Aeropuerto"
+          }
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "label": {
+            "en": "Status",
+            "fr": "État",
+            "de": "Status",
+            "es": "Estado"
+          }
+        },
+        {
+          "key": "level",
+          "type": "number",
+          "label": {
+            "en": "Disruption level (0 to 3)",
+            "fr": "Niveau de perturbation (0 à 3)",
+            "de": "Störungsstufe (0 bis 3)",
+            "es": "Nivel de incidencia (0 a 3)"
+          }
+        },
+        {
+          "key": "level_name",
+          "type": "string",
+          "label": {
+            "en": "Level name",
+            "fr": "Nom du niveau",
+            "de": "Name der Stufe",
+            "es": "Nombre del nivel"
+          }
+        },
+        {
+          "key": "delayed",
+          "type": "number",
+          "label": {
+            "en": "Delays (1 or 0)",
+            "fr": "Retards (1 ou 0)",
+            "de": "Verspätungen (1 oder 0)",
+            "es": "Retrasos (1 o 0)"
+          }
+        },
+        {
+          "key": "ground_stop",
+          "type": "number",
+          "label": {
+            "en": "Ground stop (1 or 0)",
+            "fr": "Arrêt au sol (1 ou 0)",
+            "de": "Ground Stop (1 oder 0)",
+            "es": "Parada en tierra (1 o 0)"
+          }
+        },
+        {
+          "key": "ground_delay",
+          "type": "number",
+          "label": {
+            "en": "Ground delay program (1 or 0)",
+            "fr": "Programme de retards au sol (1 ou 0)",
+            "de": "Ground Delay Program (1 oder 0)",
+            "es": "Programa de retrasos (1 o 0)"
+          }
+        },
+        {
+          "key": "closed",
+          "type": "number",
+          "label": {
+            "en": "Closed (1 or 0)",
+            "fr": "Fermé (1 ou 0)",
+            "de": "Geschlossen (1 oder 0)",
+            "es": "Cerrado (1 o 0)"
+          }
+        },
+        {
+          "key": "departure_delay",
+          "type": "number",
+          "label": {
+            "en": "Departure delay, average (min)",
+            "fr": "Retard au départ, moyen (min)",
+            "de": "Abflugverspätung, Schnitt (Min.)",
+            "es": "Retraso de salidas, medio (min)"
+          }
+        },
+        {
+          "key": "departure_delay_max",
+          "type": "number",
+          "label": {
+            "en": "Departure delay, maximum (min)",
+            "fr": "Retard au départ, maximal (min)",
+            "de": "Abflugverspätung, Maximum (Min.)",
+            "es": "Retraso de salidas, máximo (min)"
+          }
+        },
+        {
+          "key": "arrival_delay",
+          "type": "number",
+          "label": {
+            "en": "Arrival delay, average (min)",
+            "fr": "Retard à l'arrivée, moyen (min)",
+            "de": "Ankunftsverspätung, Schnitt (Min.)",
+            "es": "Retraso de llegadas, medio (min)"
+          }
+        },
+        {
+          "key": "arrival_delay_max",
+          "type": "number",
+          "label": {
+            "en": "Arrival delay, maximum (min)",
+            "fr": "Retard à l'arrivée, maximal (min)",
+            "de": "Ankunftsverspätung, Maximum (Min.)",
+            "es": "Retraso de llegadas, máximo (min)"
+          }
+        },
+        {
+          "key": "reason",
+          "type": "string",
+          "label": {
+            "en": "Cause",
+            "fr": "Motif",
+            "de": "Ursache",
+            "es": "Causa"
+          }
         }
       ]
-    }
-  ],
-  "widgets": [
-    {
-      "key": "demo_status",
-      "label": { "en": "Demo status", "fr": "État de la démo" },
-      "description": {
-        "en": "Live temperature and plug power, plug connection and observed location.",
-        "fr": "Température et puissance en direct, connexion de la prise, position observée."
-      },
-      "icon": "activity",
-      "action_timeout_seconds": 15
     }
   ]
 }

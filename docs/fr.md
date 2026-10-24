@@ -1,67 +1,175 @@
-# Template de démonstration
+# FAA Airport Status
 
-Ceci est la documentation utilisateur de l'intégration. Gladys ré-héberge ce
-fichier et affiche un lien **Documentation** permanent vers lui dans l'écran
-de configuration (dans la langue de l'utilisateur, avec l'anglais en repli) —
-c'est au moment de configurer que l'utilisateur en a le plus besoin. Gardez
-les courtes indications d'accueil dans les blocs `section` du `config_schema`
-du manifest ; mettez ici le pas-à-pas détaillé (captures d'écran, dépannage…).
+L'état des aéroports américains dans Gladys, tel que la Federal Aviation Administration (FAA) le
+publie : arrêts au sol, programmes de retards au sol, retards au départ et à l'arrivée, fermetures.
+Pratique avant un voyage vers ou depuis les États-Unis, ou pour suivre l'aéroport du vol d'un
+proche.
+
+Les données viennent de [FAA NAS Status](https://nasstatus.faa.gov), le flux ouvert de la FAA sur
+l'espace aérien américain : **pas de compte, pas de clé**. Cette intégration n'est pas affiliée à
+la FAA.
+
+> **Développée hors des États-Unis : vos retours sont les bienvenus.** Elle est construite et
+> testée sur de vraies réponses de la FAA (une journée d'orages en été, une tempête de neige, un
+> matin calme) et son conteneur a tourné sur le flux réel ; elle n'a pas encore tourné dans
+> beaucoup d'installations Gladys.
 
 ## Ce que vous obtenez
 
-Six appareils de démonstration apparaissent après l'installation : une
-station météo (vraies données Open-Meteo), un interrupteur, une lampe
-variable, une prise connectée avec mesure de puissance, un détecteur de
-mouvement et une caméra.
+- **Un appareil par aéroport suivi** (JFK, ATL, SFO… ou n'importe quel code FAA) : son état en
+  clair, un niveau de perturbation de 0 à 3, quatre oui/non (retards, arrêt au sol, programme de
+  retards au sol, fermeture), les retards moyen et maximal au départ et à l'arrivée en minutes, et
+  le motif (orages, vent, plafond bas, trafic chargé…).
+- **Un widget de tableau de bord** : l'état de chaque aéroport suivi, le plus perturbé en premier.
+- **Un déclencheur de scène** : la FAA déclare ou lève des retards, un arrêt au sol ou une
+  fermeture.
+- **Une action de scène** : lire l'état d'un aéroport, avec une phrase prête à envoyer par message
+  ou sur une enceinte.
+
+## Prérequis
+
+- Gladys Assistant 5.1.0 ou plus récent.
+- Un accès à Internet depuis la machine de Gladys (l'intégration appelle `nasstatus.faa.gov`).
+
+## Installation
+
+1. Dans Gladys, ouvrez **Intégrations → Installer depuis GitHub**.
+2. Collez `https://github.com/guim31/gladys-faa` et installez.
+3. Ouvrez l'onglet **Configuration** de l'intégration pour suivre des aéroports (ci-dessous).
 
 ## Configuration
 
-1. Ouvrez l'onglet **Configuration** de l'intégration.
-2. Renseignez la **latitude** et la **longitude** que la station météo de
-   démonstration doit observer (Paris par défaut), et choisissez votre unité
-   de température. L'**intervalle de rafraîchissement** règle la fréquence
-   de lecture de la station météo et de la puissance de la prise : toutes
-   les 5 minutes par défaut, toutes les minutes au plus.
-3. Enregistrez : les appareils apparaissent dans l'onglet **Découverte**,
-   prêts à être ajoutés.
+### Réglages
 
-Le réglage **Préférer la connexion locale** pilote la prise de
-démonstration : elle affiche en badge le canal réellement utilisé (local ou
-cloud), avec un point orange quand elle fonctionne en mode dégradé (local
-refusé, bascule cloud).
+- **Langue des textes** : la langue des noms de fonctionnalités (fixés à la création d'un
+  appareil), des états, des motifs et des phrases envoyées à vos scènes.
+- **Fréquence de mise à jour** : 5 minutes (par défaut) ou 10 minutes. Une seule requête sert tous
+  les aéroports suivis.
 
-## Actions
+### Suivre un aéroport
 
-- **Tester le fournisseur météo** — effectue une requête en direct vers
-  Open-Meteo et affiche la température et l'humidité actuelles sous le
-  bouton.
-- **Identifier un appareil** — choisissez un de vos appareils dans la liste
-  et il se signale (la lampe de démonstration « clignote » dans les logs).
+Utilisez **Suivre un aéroport** avec :
 
-## Scènes
+- son code FAA à trois lettres : `JFK`, `LGA`, `EWR`, `ATL`, `ORD`, `SFO`… (pour la plupart des
+  aéroports, le code imprimé sur votre carte d'embarquement) ;
+- ou son code OACI à quatre lettres, pour les États-Unis continentaux : `KJFK` ;
+- ou le nom de sa ville : `Atlanta`, `San Francisco`. Quand plusieurs aéroports correspondent
+  (`Chicago`, `Washington`, `New York`), la réponse les liste : suivez le vôtre par son code.
 
-L'intégration ajoute ses propres cartes à l'éditeur de scènes (Gladys 5.1
-ou plus récent), dans la catégorie **Intégrations** :
+Les 77 grands aéroports suivis par la FAA sont connus par leur nom. Tout autre code est accepté tel
+quel : la FAA publie aussi des événements pour de plus petits aéroports (surtout des fermetures),
+et des programmes de retards pour quelques aéroports canadiens (`YYZ`, `YUL`).
 
-- **Mouvement détecté** (déclencheur) — lance la scène quand un détecteur
-  de démonstration voit bouger quelque chose. Choisissez éventuellement le
-  détecteur et ce qui a bougé (personne, animal) ; laissés vides, toute
-  détection correspond. Les actions suivantes peuvent lire ce qui a bougé
-  avec `{{triggerEvent.data.target}}`.
-- **Identifier un appareil** (action) — fait se signaler l'appareil choisi.
-  Elle indique si l'appareil a pu se signaler, pour que les actions
-  suivantes puissent en dépendre.
+Ouvrez ensuite l'onglet **Découverte** et créez l'appareil. Jusqu'à 20 aéroports.
 
-## Tableau de bord
+### Retirer, vérifier l'état
 
-Ajoutez le widget **État de la démo** à un tableau de bord : il affiche en
-direct la température de la station météo et la puissance de la prise du
-bureau, la connexion utilisée par la prise (en orange si dégradée) et la
-position observée. Son bouton **Identifier la lampe** fait se signaler la
-lampe de démonstration.
+- **Ne plus suivre un aéroport** : tapez son code. Son appareil reste dans Gladys jusqu'à ce que
+  vous le supprimiez.
+- **État** : liste les aéroports suivis, leur état actuel, si leur appareil est créé, et la
+  dernière lecture de la FAA.
+
+## Appareils
+
+Chaque appareil d'aéroport a ces fonctionnalités (noms dans la langue choisie à sa création) :
+
+| Fonctionnalité               | Type         | Valeur                                                              |
+| ---------------------------- | ------------ | ------------------------------------------------------------------- |
+| État                         | texte        | « Arrêt au sol jusqu'à 23:45 · Départs 121–135 min ↗ »              |
+| Niveau de perturbation       | niveau 0 à 3 | 0 normal, 1 retards, 2 programme de retards, 3 arrêt ou fermeture   |
+| Retards                      | oui/non      | un arrêt au sol, un programme, des retards au départ ou à l'arrivée |
+| Arrêt au sol                 | oui/non      | les vols vers cet aéroport sont retenus à leur départ               |
+| Programme de retards au sol  | oui/non      | les départs vers cet aéroport sont régulés, avec des retards fixés  |
+| Fermeture                    | oui/non      | fermé par un NOTAM, en ce moment                                    |
+| Retard au départ (moyen)     | minutes      | 0 quand il n'y en a pas                                             |
+| Retard au départ (maximal)   | minutes      | 0 quand il n'y en a pas                                             |
+| Retard à l'arrivée (moyen)   | minutes      | le plus grand du retard à l'arrivée et du programme                 |
+| Retard à l'arrivée (maximal) | minutes      | idem                                                                |
+| Motif                        | texte        | « Orages », « Fermeture (NOTAM) », « Aucune perturbation »          |
+
+Les heures sont dans le fuseau horaire de votre Gladys. Les flèches disent si la FAA s'attend à
+ce que les retards augmentent (↗) ou diminuent (↘).
+
+## Widget de tableau de bord
+
+**État des aéroports US** : une ligne par aéroport suivi (avec un appareil créé), le plus perturbé
+en premier : vert pour un trafic normal, orange pour des retards au départ ou à l'arrivée, rouge
+pour un programme de retards au sol, un arrêt au sol ou une fermeture. La légende donne les motifs. Le widget montre 10 aéroports au plus : les plus perturbés.
+
+## Déclencheur de scène
+
+**État d'un aéroport modifié** : se déclenche quand la FAA, dans un aéroport suivi (ou celui que
+vous choisissez) :
+
+- déclare ou lève une **fermeture** (`closed`, `reopened`) ;
+- déclare ou lève un **arrêt au sol** (`ground_stop_declared`, `ground_stop_lifted`) ;
+- déclare des retards (au départ, à l'arrivée ou un programme de retards au sol) ou y met fin
+  (`delay_declared`, `delay_lifted`).
+
+Choisissez les événements voulus dans le déclencheur. Les variables donnent l'aéroport,
+l'événement, l'état en clair, le niveau et le niveau précédent, le motif, les retards moyens au
+départ et à l'arrivée et la fin prévue. Rien ne se déclenche à la première lecture après le démarrage de l'intégration : ce qui était déjà là n'est pas une nouvelle. La fin des retards n'est annoncée qu'après deux lectures de suite sans retard (les retards au départ vont et viennent autour du seuil de 15 minutes de la FAA).
+
+## Action de scène
+
+**Lire l'état d'un aéroport** : pour un aéroport suivi, donne une phrase (« EWR · Newark : Arrêt
+au sol jusqu'à 23:45 · Départs 121–135 min ↗. Motif : Orages. »), l'état, le niveau et son nom,
+retards, arrêt au sol, programme de retards et fermeture en 1 ou 0, les quatre retards en minutes,
+et le motif. Utilisez-les dans un message, ou dans une étape « Continuer seulement si ».
+
+## Exemples de scènes
+
+- **Avant un vol** : chaque matin à 6:00, lire l'état de `JFK` ; continuer seulement si le niveau
+  est supérieur à 0 ; envoyer la phrase sur Telegram.
+- **Aller chercher quelqu'un** : quand un arrêt au sol est déclaré à l'aéroport d'arrivée du soir,
+  envoyer un message « Son vol aura du retard : arrêt au sol à JFK, motif : orages ».
+- **Retour à la normale** : quand les retards cessent à `ORD`, l'annoncer sur l'enceinte de la
+  cuisine.
+
+## Données, mise à jour et conditions
+
+L'intégration lit `https://nasstatus.faa.gov/api/airport-events` toutes les 5 ou 10 minutes, une
+fois pour tous les aéroports suivis, et seulement quand au moins un appareil d'aéroport est créé.
+C'est le flux de la page NAS Status de la FAA elle-même ; il ne demande aucune clé et la FAA n'y
+publie aucun quota. Les aéroports absents de la réponse fonctionnent normalement.
+
+- **Arrêt au sol** (ground stop) : la FAA retient à leur départ les vols à destination de
+  l'aéroport, le plus souvent pour des orages ou une mauvaise visibilité. L'état donne sa fin
+  prévue.
+- **Programme de retards au sol** (ground delay program) : la FAA régule les vols à destination
+  de l'aéroport et leur fixe un retard avant le décollage ; ses retards moyen et maximal comptent comme retards à l'arrivée. Un programme annoncé pour plus tard compte à partir de son début.
+- **Retards au départ et à l'arrivée** : signalés par l'aéroport, sous forme de fourchette
+  (« 16–30 min ») avec une tendance.
+- **Fermeture** : un NOTAM qui ferme l'aéroport en ce moment. Les fermetures à horaires quotidiens
+  (« DLY 0430-0945 ») ne comptent que pendant ces horaires ; celles qui laissent passer les vols
+  réguliers, et les restrictions pour la seule aviation générale, sont ignorées.
 
 ## Dépannage
 
-L'intégration journalise tout ce qu'elle fait : consultez les logs de
-l'intégration depuis l'interface Gladys (ou `docker logs` sur l'hôte) avec
-`LOG_LEVEL=debug` pour le détail complet.
+- **L'appareil n'a pas de valeur** : créez-le dans l'onglet **Découverte** ; les valeurs arrivent
+  en quelques secondes.
+- **L'état de connexion dit « La FAA ne répond pas »** : le flux est en panne ou injoignable depuis
+  votre Gladys. Les dernières valeurs restent ; l'intégration réessaie à chaque intervalle et
+  signale son retour.
+- **Un aéroport n'est jamais perturbé** : vérifiez son code avec **État**. Un aéroport hors des 77
+  grands apparaît rarement dans le flux.
+- **Plus de détails** : mettez `LOG_LEVEL=debug` dans l'environnement de l'intégration ; une
+  lecture normale n'écrit rien au niveau info.
+
+## Limites
+
+- La FAA couvre les États-Unis (et quelques programmes canadiens) : aucun autre pays.
+- Pas de données par vol : les retards sont ceux de l'aéroport, pas de votre vol.
+- Les restrictions pour l'aviation générale, le dégivrage et les configurations de pistes ne sont
+  pas affichés.
+- Les noms de fonctionnalités sont fixés à la création de l'appareil.
+- Les fermetures du coucher au lever du soleil (« SS-SR ») comptent sur toute leur période.
+- Jusqu'à 20 aéroports.
+
+## Crédits
+
+- Données : [FAA NAS Status](https://nasstatus.faa.gov), service public de la Federal Aviation
+  Administration. Cette intégration n'est ni affiliée à la FAA ni approuvée par elle.
+- Inspirée de l'intégration Home Assistant
+  [FAA Delays](https://www.home-assistant.io/integrations/faa_delays/) (Apache 2.0) et de sa
+  bibliothèque `faadelays`.
