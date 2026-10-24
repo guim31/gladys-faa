@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-24
+
 ### Added
 
 - Follow US airports from the FAA NAS Status feed (no account, no key), by
@@ -25,4 +27,5 @@ the notes of the version's GitHub Release.
 - Scene action "Get an airport status", with a sentence ready to send.
 - Texts and documentation in English, French, German and Spanish.
 
-[Unreleased]: https://github.com/guim31/gladys-faa/commits/main
+[Unreleased]: https://github.com/guim31/gladys-faa/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/guim31/gladys-faa/releases/tag/v1.0.0
