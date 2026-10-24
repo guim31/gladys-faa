@@ -1,0 +1,1571 @@
+[
+  {
+    "airportId": "BOS",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "f35cf1c4-8251-433a-89d7-16b2c8feac6a",
+      "createdAt": "2025-11-06T15:18:04Z",
+      "airportId": "BOS",
+      "sourceTimeStamp": "2025-11-06T15:16:56Z",
+      "updatedAt": "2025-11-06T15:18:04Z",
+      "impactingCondition": "runway construction",
+      "avgDelay": 84.0,
+      "maxDelay": 157,
+      "startTime": "2025-11-06T17:00:00Z",
+      "endTime": "2025-11-07T03:59:00Z",
+      "center": "ZBW",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=61&adv_date=11062025&facId=BOS&title=ATCSCC ADVZY 061 BOS/ZBW 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": null,
+      "includedFacilities": [
+        "ZLA",
+        "ZAU",
+        "ZLC",
+        "ZTL",
+        "ZDC",
+        "ZNY",
+        "ZHU",
+        "ZJX",
+        "ZFW",
+        "ZOB",
+        "ZDV",
+        "ZOA",
+        "ZSE",
+        "ZBW",
+        "ZMA",
+        "ZKC",
+        "ZME",
+        "ZID",
+        "ZAB",
+        "ZMP",
+        "CYHZ",
+        "CYOW",
+        "CYUL",
+        "CYYZ",
+        "CYTZ",
+        "CYQB"
+      ],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "987070fa-8400-49a3-a3cd-14f17409af1e",
+        "controlElement": "BOS",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T17:00:00Z",
+        "endTime": "2025-11-07T03:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T17:00:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 39,
+              "seq": 1
+            },
+            {
+              "delay": 49,
+              "seq": 2
+            },
+            {
+              "delay": 53,
+              "seq": 3
+            },
+            {
+              "delay": 47,
+              "seq": 4
+            },
+            {
+              "delay": 50,
+              "seq": 5
+            },
+            {
+              "delay": 53,
+              "seq": 6
+            },
+            {
+              "delay": 55,
+              "seq": 7
+            },
+            {
+              "delay": 59,
+              "seq": 8
+            },
+            {
+              "delay": 62,
+              "seq": 9
+            },
+            {
+              "delay": 75,
+              "seq": 10
+            },
+            {
+              "delay": 84,
+              "seq": 11
+            },
+            {
+              "delay": 81,
+              "seq": 12
+            },
+            {
+              "delay": 82,
+              "seq": 13
+            },
+            {
+              "delay": 90,
+              "seq": 14
+            },
+            {
+              "delay": 89,
+              "seq": 15
+            },
+            {
+              "delay": 92,
+              "seq": 16
+            },
+            {
+              "delay": 96,
+              "seq": 17
+            },
+            {
+              "delay": 103,
+              "seq": 18
+            },
+            {
+              "delay": 110,
+              "seq": 19
+            },
+            {
+              "delay": 99,
+              "seq": 20
+            },
+            {
+              "delay": 101,
+              "seq": 21
+            },
+            {
+              "delay": 108,
+              "seq": 22
+            },
+            {
+              "delay": 106,
+              "seq": 23
+            },
+            {
+              "delay": 93,
+              "seq": 24
+            },
+            {
+              "delay": 92,
+              "seq": 25
+            },
+            {
+              "delay": 101,
+              "seq": 26
+            },
+            {
+              "delay": 110,
+              "seq": 27
+            },
+            {
+              "delay": 110,
+              "seq": 28
+            },
+            {
+              "delay": 107,
+              "seq": 29
+            },
+            {
+              "delay": 105,
+              "seq": 30
+            },
+            {
+              "delay": 108,
+              "seq": 31
+            },
+            {
+              "delay": 113,
+              "seq": 32
+            },
+            {
+              "delay": 106,
+              "seq": 33
+            },
+            {
+              "delay": 100,
+              "seq": 34
+            },
+            {
+              "delay": 97,
+              "seq": 35
+            },
+            {
+              "delay": 85,
+              "seq": 36
+            },
+            {
+              "delay": 78,
+              "seq": 37
+            },
+            {
+              "delay": 73,
+              "seq": 38
+            },
+            {
+              "delay": 67,
+              "seq": 39
+            },
+            {
+              "delay": 61,
+              "seq": 40
+            },
+            {
+              "delay": 53,
+              "seq": 41
+            },
+            {
+              "delay": 45,
+              "seq": 42
+            },
+            {
+              "delay": 36,
+              "seq": 43
+            },
+            {
+              "delay": 31,
+              "seq": 44
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T15:16:56Z",
+        "createdAt": "2025-09-18T12:07:31Z",
+        "updatedAt": "2025-11-06T15:18:16Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": {
+      "id": "a192108a-98ee-452b-8bc9-5e1c0e1e7f28",
+      "airportId": "BOS",
+      "createdAt": null,
+      "updatedAt": "2025-10-23T12:37:45Z",
+      "startTime": "2025-10-23T12:30:00Z",
+      "endTime": "2025-11-15T04:59:00Z",
+      "simpleText": "!BOS 10/557 BOS AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 617-561-2500 2510231230-2511150459",
+      "text": "TO NON SKED TRANSIENT GA ACFT EXC PPR 617-561-2500",
+      "notamNumber": 557,
+      "issuedDate": "2025-10-23T12:30:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "BOS",
+      "reason": "WX:Wind",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "16 minutes",
+        "max": "30 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T13:00:00Z",
+      "averageDelay": "15",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "7f2e4446-449d-4c0e-82a8-607f620f70a2",
+      "createdAt": "2025-11-06T13:44:03Z",
+      "airportId": "BOS",
+      "arrivalRunwayConfig": "33L/32",
+      "departureRunwayConfig": "33L",
+      "arrivalRate": 30,
+      "sourceTimeStamp": "2025-11-06T13:44:02Z"
+    },
+    "deicing": null,
+    "airportLongName": "General Edward Lawrence Logan International",
+    "latitude": "42.3656",
+    "longitude": "-71.0096"
+  },
+  {
+    "airportId": "DCA",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "b331a995-4c46-4567-8cce-f3f85c6f001b",
+      "createdAt": "2025-11-06T13:31:04Z",
+      "airportId": "DCA",
+      "sourceTimeStamp": "2025-11-06T13:30:01Z",
+      "updatedAt": "2025-11-06T13:31:04Z",
+      "impactingCondition": "other",
+      "avgDelay": 45.0,
+      "maxDelay": 92,
+      "startTime": "2025-11-06T13:27:00Z",
+      "endTime": "2025-11-07T02:59:00Z",
+      "center": "ZDC",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=44&adv_date=11062025&facId=DCA&title=ATCSCC ADVZY 044 DCA/ZDC 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": null,
+      "includedFacilities": [
+        "ZLA",
+        "ZAU",
+        "ZLC",
+        "ZTL",
+        "ZDC",
+        "ZNY",
+        "ZHU",
+        "ZJX",
+        "ZFW",
+        "ZOB",
+        "ZDV",
+        "ZOA",
+        "ZSE",
+        "ZBW",
+        "ZMA",
+        "ZKC",
+        "ZME",
+        "ZID",
+        "ZAB",
+        "ZMP",
+        "CYHZ",
+        "CYOW",
+        "CYUL",
+        "CYYZ",
+        "CYTZ",
+        "CYQB"
+      ],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "2b8eb54d-294c-4bb7-a1cd-3193fda7b4e8",
+        "controlElement": "DCA",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T13:27:00Z",
+        "endTime": "2025-11-07T02:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T13:15:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 65,
+              "seq": 1
+            },
+            {
+              "delay": 62,
+              "seq": 2
+            },
+            {
+              "delay": 61,
+              "seq": 3
+            },
+            {
+              "delay": 59,
+              "seq": 4
+            },
+            {
+              "delay": 57,
+              "seq": 5
+            },
+            {
+              "delay": 54,
+              "seq": 6
+            },
+            {
+              "delay": 50,
+              "seq": 7
+            },
+            {
+              "delay": 47,
+              "seq": 8
+            },
+            {
+              "delay": 44,
+              "seq": 9
+            },
+            {
+              "delay": 41,
+              "seq": 10
+            },
+            {
+              "delay": 40,
+              "seq": 11
+            },
+            {
+              "delay": 39,
+              "seq": 12
+            },
+            {
+              "delay": 39,
+              "seq": 13
+            },
+            {
+              "delay": 40,
+              "seq": 14
+            },
+            {
+              "delay": 41,
+              "seq": 15
+            },
+            {
+              "delay": 42,
+              "seq": 16
+            },
+            {
+              "delay": 43,
+              "seq": 17
+            },
+            {
+              "delay": 45,
+              "seq": 18
+            },
+            {
+              "delay": 46,
+              "seq": 19
+            },
+            {
+              "delay": 48,
+              "seq": 20
+            },
+            {
+              "delay": 50,
+              "seq": 21
+            },
+            {
+              "delay": 53,
+              "seq": 22
+            },
+            {
+              "delay": 55,
+              "seq": 23
+            },
+            {
+              "delay": 56,
+              "seq": 24
+            },
+            {
+              "delay": 57,
+              "seq": 25
+            },
+            {
+              "delay": 56,
+              "seq": 26
+            },
+            {
+              "delay": 55,
+              "seq": 27
+            },
+            {
+              "delay": 53,
+              "seq": 28
+            },
+            {
+              "delay": 52,
+              "seq": 29
+            },
+            {
+              "delay": 52,
+              "seq": 30
+            },
+            {
+              "delay": 53,
+              "seq": 31
+            },
+            {
+              "delay": 54,
+              "seq": 32
+            },
+            {
+              "delay": 55,
+              "seq": 33
+            },
+            {
+              "delay": 55,
+              "seq": 34
+            },
+            {
+              "delay": 55,
+              "seq": 35
+            },
+            {
+              "delay": 53,
+              "seq": 36
+            },
+            {
+              "delay": 50,
+              "seq": 37
+            },
+            {
+              "delay": 46,
+              "seq": 38
+            },
+            {
+              "delay": 43,
+              "seq": 39
+            },
+            {
+              "delay": 40,
+              "seq": 40
+            },
+            {
+              "delay": 39,
+              "seq": 41
+            },
+            {
+              "delay": 40,
+              "seq": 42
+            },
+            {
+              "delay": 40,
+              "seq": 43
+            },
+            {
+              "delay": 41,
+              "seq": 44
+            },
+            {
+              "delay": 40,
+              "seq": 45
+            },
+            {
+              "delay": 37,
+              "seq": 46
+            },
+            {
+              "delay": 33,
+              "seq": 47
+            },
+            {
+              "delay": 29,
+              "seq": 48
+            },
+            {
+              "delay": 28,
+              "seq": 49
+            },
+            {
+              "delay": 28,
+              "seq": 50
+            },
+            {
+              "delay": 30,
+              "seq": 51
+            },
+            {
+              "delay": 32,
+              "seq": 52
+            },
+            {
+              "delay": 34,
+              "seq": 53
+            },
+            {
+              "delay": 35,
+              "seq": 54
+            },
+            {
+              "delay": 37,
+              "seq": 55
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T13:30:01Z",
+        "createdAt": "2025-09-16T19:58:12Z",
+        "updatedAt": "2025-11-06T13:31:12Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "b711b870-903e-485c-8cdc-4397e1863ff2",
+      "createdAt": "2025-11-06T13:05:34Z",
+      "airportId": "DCA",
+      "arrivalRunwayConfig": "01",
+      "departureRunwayConfig": "01",
+      "arrivalRate": 24,
+      "sourceTimeStamp": "2025-11-06T13:05:33Z"
+    },
+    "deicing": null,
+    "airportLongName": "Ronald Reagan Washington National",
+    "latitude": "38.8512",
+    "longitude": "-77.0402"
+  },
+  {
+    "airportId": "EWR",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "ffdba7a3-7198-4ffc-a674-67333318688f",
+      "createdAt": "2025-11-06T15:52:33Z",
+      "airportId": "EWR",
+      "sourceTimeStamp": "2025-11-06T15:50:23Z",
+      "updatedAt": "2025-11-06T15:52:33Z",
+      "impactingCondition": "wind",
+      "avgDelay": 80.0,
+      "maxDelay": 146,
+      "startTime": "2025-11-06T15:46:00Z",
+      "endTime": "2025-11-07T02:59:00Z",
+      "center": "ZNY",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=64&adv_date=11062025&facId=EWR&title=ATCSCC ADVZY 064 EWR/ZNY 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": null,
+      "includedFacilities": [
+        "ZLA",
+        "ZAU",
+        "ZLC",
+        "ZTL",
+        "ZDC",
+        "ZNY",
+        "ZHU",
+        "ZJX",
+        "ZFW",
+        "ZOB",
+        "ZDV",
+        "ZOA",
+        "ZSE",
+        "ZBW",
+        "ZMA",
+        "ZKC",
+        "ZME",
+        "ZID",
+        "ZAB",
+        "ZMP",
+        "CYHZ",
+        "CYOW",
+        "CYUL",
+        "CYYZ",
+        "CYTZ",
+        "CYQB"
+      ],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "c5cb76f1-e3ec-442c-9923-4579769d9e75",
+        "controlElement": "EWR",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T15:46:00Z",
+        "endTime": "2025-11-07T02:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T15:45:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 69,
+              "seq": 1
+            },
+            {
+              "delay": 56,
+              "seq": 2
+            },
+            {
+              "delay": 49,
+              "seq": 3
+            },
+            {
+              "delay": 50,
+              "seq": 4
+            },
+            {
+              "delay": 54,
+              "seq": 5
+            },
+            {
+              "delay": 58,
+              "seq": 6
+            },
+            {
+              "delay": 60,
+              "seq": 7
+            },
+            {
+              "delay": 59,
+              "seq": 8
+            },
+            {
+              "delay": 58,
+              "seq": 9
+            },
+            {
+              "delay": 56,
+              "seq": 10
+            },
+            {
+              "delay": 56,
+              "seq": 11
+            },
+            {
+              "delay": 58,
+              "seq": 12
+            },
+            {
+              "delay": 60,
+              "seq": 13
+            },
+            {
+              "delay": 63,
+              "seq": 14
+            },
+            {
+              "delay": 66,
+              "seq": 15
+            },
+            {
+              "delay": 70,
+              "seq": 16
+            },
+            {
+              "delay": 74,
+              "seq": 17
+            },
+            {
+              "delay": 78,
+              "seq": 18
+            },
+            {
+              "delay": 79,
+              "seq": 19
+            },
+            {
+              "delay": 79,
+              "seq": 20
+            },
+            {
+              "delay": 76,
+              "seq": 21
+            },
+            {
+              "delay": 74,
+              "seq": 22
+            },
+            {
+              "delay": 70,
+              "seq": 23
+            },
+            {
+              "delay": 68,
+              "seq": 24
+            },
+            {
+              "delay": 69,
+              "seq": 25
+            },
+            {
+              "delay": 72,
+              "seq": 26
+            },
+            {
+              "delay": 76,
+              "seq": 27
+            },
+            {
+              "delay": 81,
+              "seq": 28
+            },
+            {
+              "delay": 85,
+              "seq": 29
+            },
+            {
+              "delay": 90,
+              "seq": 30
+            },
+            {
+              "delay": 95,
+              "seq": 31
+            },
+            {
+              "delay": 99,
+              "seq": 32
+            },
+            {
+              "delay": 100,
+              "seq": 33
+            },
+            {
+              "delay": 100,
+              "seq": 34
+            },
+            {
+              "delay": 99,
+              "seq": 35
+            },
+            {
+              "delay": 98,
+              "seq": 36
+            },
+            {
+              "delay": 97,
+              "seq": 37
+            },
+            {
+              "delay": 98,
+              "seq": 38
+            },
+            {
+              "delay": 100,
+              "seq": 39
+            },
+            {
+              "delay": 100,
+              "seq": 40
+            },
+            {
+              "delay": 100,
+              "seq": 41
+            },
+            {
+              "delay": 97,
+              "seq": 42
+            },
+            {
+              "delay": 93,
+              "seq": 43
+            },
+            {
+              "delay": 88,
+              "seq": 44
+            },
+            {
+              "delay": 84,
+              "seq": 45
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T15:50:23Z",
+        "createdAt": "2025-09-25T15:41:39Z",
+        "updatedAt": "2025-11-06T15:52:48Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": {
+      "airportId": "EWR",
+      "reason": "ZDC / VOL:Compacted Demand",
+      "arrivalDeparture": {
+        "type": "Arrival",
+        "min": "1 hour and 1 minute",
+        "max": "1 hour and 15 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T15:45:00Z",
+      "averageDelay": "60",
+      "trend": "increasing"
+    },
+    "departureDelay": {
+      "airportId": "EWR",
+      "reason": "TM Initiatives:Metering:",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "1 hour and 46 minutes",
+        "max": "2 hours",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T15:05:00Z",
+      "averageDelay": "105",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "4f3ef9f6-da74-4406-a3a4-12b3c27206a4",
+      "createdAt": "2025-11-06T14:07:58Z",
+      "airportId": "EWR",
+      "arrivalRunwayConfig": "22R CIR 29",
+      "departureRunwayConfig": "22L",
+      "arrivalRate": 36,
+      "sourceTimeStamp": "2025-11-06T14:07:58Z"
+    },
+    "deicing": null,
+    "airportLongName": "Newark International",
+    "latitude": "40.6895",
+    "longitude": "-74.1745"
+  },
+  {
+    "airportId": "LAS",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "9e713cc4-27b2-4750-9db1-efbd2770aa9a",
+      "airportId": "LAS",
+      "createdAt": null,
+      "updatedAt": "2025-10-28T17:26:00Z",
+      "startTime": "2025-10-28T17:06:00Z",
+      "endTime": "2026-01-28T23:00:00Z",
+      "simpleText": "!LAS 10/296 LAS AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR 702-261-7775 2510281706-2601282300",
+      "text": "TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR 702-261-7775",
+      "notamNumber": 296,
+      "issuedDate": "2025-10-28T17:17:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "e85a0875-fdc2-49a0-9fd1-07874fd9e6c2",
+      "createdAt": "2025-11-06T13:35:05Z",
+      "airportId": "LAS",
+      "arrivalRunwayConfig": "01L/26L",
+      "departureRunwayConfig": "01R/01L",
+      "arrivalRate": 64,
+      "sourceTimeStamp": "2025-11-06T13:35:04Z"
+    },
+    "deicing": null,
+    "airportLongName": "Harry Reid International",
+    "latitude": "36.0840",
+    "longitude": "-115.1537"
+  },
+  {
+    "airportId": "LGA",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "fe05c224-341f-4cad-a31a-d914dc173862",
+      "createdAt": "2025-11-06T13:59:34Z",
+      "airportId": "LGA",
+      "sourceTimeStamp": "2025-11-06T13:57:20Z",
+      "updatedAt": "2025-11-06T13:59:34Z",
+      "impactingCondition": "wind",
+      "avgDelay": 38.0,
+      "maxDelay": 80,
+      "startTime": "2025-11-06T13:53:00Z",
+      "endTime": "2025-11-07T02:59:00Z",
+      "center": "ZNY",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=49&adv_date=11062025&facId=LGA&title=ATCSCC ADVZY 049 LGA/ZNY 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": 1425.0,
+      "includedFacilities": ["CYTZ", "CYYZ", "CYOW", "CYUL", "CYQB"],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "352949df-bebb-40ea-bda1-faaae18e6246",
+        "controlElement": "LGA",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T13:53:00Z",
+        "endTime": "2025-11-07T02:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T13:45:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 64,
+              "seq": 1
+            },
+            {
+              "delay": 61,
+              "seq": 2
+            },
+            {
+              "delay": 55,
+              "seq": 3
+            },
+            {
+              "delay": 50,
+              "seq": 4
+            },
+            {
+              "delay": 46,
+              "seq": 5
+            },
+            {
+              "delay": 40,
+              "seq": 6
+            },
+            {
+              "delay": 31,
+              "seq": 7
+            },
+            {
+              "delay": 25,
+              "seq": 8
+            },
+            {
+              "delay": 21,
+              "seq": 9
+            },
+            {
+              "delay": 21,
+              "seq": 10
+            },
+            {
+              "delay": 23,
+              "seq": 11
+            },
+            {
+              "delay": 24,
+              "seq": 12
+            },
+            {
+              "delay": 24,
+              "seq": 13
+            },
+            {
+              "delay": 23,
+              "seq": 14
+            },
+            {
+              "delay": 24,
+              "seq": 15
+            },
+            {
+              "delay": 24,
+              "seq": 16
+            },
+            {
+              "delay": 24,
+              "seq": 17
+            },
+            {
+              "delay": 25,
+              "seq": 18
+            },
+            {
+              "delay": 28,
+              "seq": 19
+            },
+            {
+              "delay": 32,
+              "seq": 20
+            },
+            {
+              "delay": 37,
+              "seq": 21
+            },
+            {
+              "delay": 41,
+              "seq": 22
+            },
+            {
+              "delay": 43,
+              "seq": 23
+            },
+            {
+              "delay": 43,
+              "seq": 24
+            },
+            {
+              "delay": 42,
+              "seq": 25
+            },
+            {
+              "delay": 42,
+              "seq": 26
+            },
+            {
+              "delay": 41,
+              "seq": 27
+            },
+            {
+              "delay": 40,
+              "seq": 28
+            },
+            {
+              "delay": 41,
+              "seq": 29
+            },
+            {
+              "delay": 43,
+              "seq": 30
+            },
+            {
+              "delay": 46,
+              "seq": 31
+            },
+            {
+              "delay": 46,
+              "seq": 32
+            },
+            {
+              "delay": 43,
+              "seq": 33
+            },
+            {
+              "delay": 41,
+              "seq": 34
+            },
+            {
+              "delay": 41,
+              "seq": 35
+            },
+            {
+              "delay": 40,
+              "seq": 36
+            },
+            {
+              "delay": 38,
+              "seq": 37
+            },
+            {
+              "delay": 36,
+              "seq": 38
+            },
+            {
+              "delay": 35,
+              "seq": 39
+            },
+            {
+              "delay": 37,
+              "seq": 40
+            },
+            {
+              "delay": 39,
+              "seq": 41
+            },
+            {
+              "delay": 42,
+              "seq": 42
+            },
+            {
+              "delay": 45,
+              "seq": 43
+            },
+            {
+              "delay": 47,
+              "seq": 44
+            },
+            {
+              "delay": 47,
+              "seq": 45
+            },
+            {
+              "delay": 46,
+              "seq": 46
+            },
+            {
+              "delay": 44,
+              "seq": 47
+            },
+            {
+              "delay": 42,
+              "seq": 48
+            },
+            {
+              "delay": 40,
+              "seq": 49
+            },
+            {
+              "delay": 41,
+              "seq": 50
+            },
+            {
+              "delay": 42,
+              "seq": 51
+            },
+            {
+              "delay": 42,
+              "seq": 52
+            },
+            {
+              "delay": 41,
+              "seq": 53
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T13:57:20Z",
+        "createdAt": "2025-08-13T15:27:54Z",
+        "updatedAt": "2025-11-06T13:59:40Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "LGA",
+      "reason": "WX:Wind",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "15 minutes",
+        "max": "29 minutes",
+        "trend": "Decreasing"
+      },
+      "updateTime": "2025-11-06T15:28:00Z",
+      "averageDelay": "30",
+      "trend": "decreasing"
+    },
+    "airportConfig": {
+      "id": "5761f06f-1a9e-41b0-955b-f2375760b2e6",
+      "createdAt": "2025-11-06T10:59:32Z",
+      "airportId": "LGA",
+      "arrivalRunwayConfig": "RNAV Z 31",
+      "departureRunwayConfig": "04",
+      "arrivalRate": 36,
+      "sourceTimeStamp": "2025-11-06T10:59:31Z"
+    },
+    "deicing": null,
+    "airportLongName": "La Guardia",
+    "latitude": "40.7769",
+    "longitude": "-73.8740"
+  },
+  {
+    "airportId": "MCO",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "MCO",
+      "reason": "TM Initiatives:MIT:VOL",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "16 minutes",
+        "max": "30 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T15:25:00Z",
+      "averageDelay": "15",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "5506486c-1a30-4e49-b357-3ae0291dd6b3",
+      "createdAt": "2025-11-06T11:23:00Z",
+      "airportId": "MCO",
+      "arrivalRunwayConfig": "36R/35R",
+      "departureRunwayConfig": "36R/35L",
+      "arrivalRate": 65,
+      "sourceTimeStamp": "2025-11-06T11:22:59Z"
+    },
+    "deicing": null,
+    "airportLongName": "Orlando International",
+    "latitude": "28.4312",
+    "longitude": "-81.3081"
+  },
+  {
+    "airportId": "MIA",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "MIA",
+      "reason": "TM Initiatives:MIT:WX",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "16 minutes",
+        "max": "30 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T15:43:00Z",
+      "averageDelay": "15",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "17ef0d04-710f-48a3-a6e8-203ffc957695",
+      "createdAt": "2025-11-06T10:42:02Z",
+      "airportId": "MIA",
+      "arrivalRunwayConfig": "09/12",
+      "departureRunwayConfig": "08L/08R",
+      "arrivalRate": 72,
+      "sourceTimeStamp": "2025-11-06T10:42:01Z"
+    },
+    "deicing": null,
+    "airportLongName": "Miami International",
+    "latitude": "25.7959",
+    "longitude": "-80.2871"
+  },
+  {
+    "airportId": "PHL",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "PHL",
+      "reason": "TM Initiatives:MIT:VOL",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "16 minutes",
+        "max": "30 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2025-11-06T15:42:00Z",
+      "averageDelay": "15",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "78473488-fd78-458f-824e-fc7744d6fb85",
+      "createdAt": "2025-11-06T10:30:25Z",
+      "airportId": "PHL",
+      "arrivalRunwayConfig": "27R/35/26",
+      "departureRunwayConfig": "27L/35",
+      "arrivalRate": 60,
+      "sourceTimeStamp": "2025-11-06T10:30:25Z"
+    },
+    "deicing": null,
+    "airportLongName": "Philadelphia International",
+    "latitude": "39.8744",
+    "longitude": "-75.2424"
+  },
+  {
+    "airportId": "SBP",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "2ce1e0a9-499c-40c4-a46d-160fa69a53c8",
+      "airportId": "SBP",
+      "createdAt": null,
+      "updatedAt": "2025-10-30T15:21:50Z",
+      "startTime": "2025-11-04T08:00:00Z",
+      "endTime": "2025-11-08T12:30:00Z",
+      "simpleText": "!SBP 10/024 SBP AD AP CLSD EXC EMERG HEL DLY 0800-1230 2511040800-2511081230",
+      "text": "except EMERG HEL DLY 0800-1230",
+      "notamNumber": 24,
+      "issuedDate": "2025-10-30T15:12:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "San Luis Obispo County-McChesney Field",
+    "latitude": "35.2376",
+    "longitude": "-120.6420"
+  },
+  {
+    "airportId": "SFO",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "c6947b3a-b070-4567-9f12-3cbc302a9b60",
+      "createdAt": "2025-11-06T13:34:06Z",
+      "airportId": "SFO",
+      "sourceTimeStamp": "2025-11-06T13:32:52Z",
+      "updatedAt": "2025-11-06T13:34:06Z",
+      "impactingCondition": "low ceilings",
+      "avgDelay": 33.0,
+      "maxDelay": 81,
+      "startTime": "2025-11-06T16:15:00Z",
+      "endTime": "2025-11-06T20:59:00Z",
+      "center": "ZOA",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=45&adv_date=11062025&facId=SFO&title=ATCSCC ADVZY 045 SFO/ZOA 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": 1450.0,
+      "includedFacilities": ["CYEG", "CYVR", "CYYC"],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "ec2e7d9f-a877-4804-9281-80334b198bf2",
+        "controlElement": "SFO",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T16:15:00Z",
+        "endTime": "2025-11-06T20:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T16:15:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 12,
+              "seq": 1
+            },
+            {
+              "delay": 13,
+              "seq": 2
+            },
+            {
+              "delay": 18,
+              "seq": 3
+            },
+            {
+              "delay": 25,
+              "seq": 4
+            },
+            {
+              "delay": 28,
+              "seq": 5
+            },
+            {
+              "delay": 32,
+              "seq": 6
+            },
+            {
+              "delay": 37,
+              "seq": 7
+            },
+            {
+              "delay": 39,
+              "seq": 8
+            },
+            {
+              "delay": 38,
+              "seq": 9
+            },
+            {
+              "delay": 37,
+              "seq": 10
+            },
+            {
+              "delay": 37,
+              "seq": 11
+            },
+            {
+              "delay": 36,
+              "seq": 12
+            },
+            {
+              "delay": 38,
+              "seq": 13
+            },
+            {
+              "delay": 41,
+              "seq": 14
+            },
+            {
+              "delay": 44,
+              "seq": 15
+            },
+            {
+              "delay": 46,
+              "seq": 16
+            },
+            {
+              "delay": 45,
+              "seq": 17
+            },
+            {
+              "delay": 38,
+              "seq": 18
+            },
+            {
+              "delay": 27,
+              "seq": 19
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T13:32:52Z",
+        "createdAt": "2025-08-29T00:08:25Z",
+        "updatedAt": "2025-11-06T13:34:18Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "7bfd4f11-8dce-415b-91f0-c5481fbb660d",
+      "createdAt": "2025-11-06T14:55:20Z",
+      "airportId": "SFO",
+      "arrivalRunwayConfig": "28L/28R (.308)",
+      "departureRunwayConfig": "01L/01R",
+      "arrivalRate": 36,
+      "sourceTimeStamp": "2025-11-06T14:55:19Z"
+    },
+    "deicing": null,
+    "airportLongName": "San Francisco International",
+    "latitude": "37.6213",
+    "longitude": "-122.3790"
+  },
+  {
+    "airportId": "SNA",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "69c84b5f-0c48-466d-a434-0fe787d2f4fe",
+      "airportId": "SNA",
+      "createdAt": "2025-10-31T22:56:44Z",
+      "updatedAt": "2025-10-31T22:56:44Z",
+      "startTime": "2025-11-05T07:30:00Z",
+      "endTime": "2025-11-09T14:15:00Z",
+      "simpleText": "!SNA 10/077 SNA AD AP CLSD DLY 0730-1415 2511050730-2511091415",
+      "text": "DLY 0730-1415",
+      "notamNumber": 77,
+      "issuedDate": "2025-10-31T22:55:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "7d5262a1-c4bd-41a6-a580-2d3339e1c31e",
+      "createdAt": "2025-11-06T13:14:09Z",
+      "airportId": "SNA",
+      "arrivalRunwayConfig": "20R",
+      "departureRunwayConfig": "20R",
+      "arrivalRate": 24,
+      "sourceTimeStamp": "2025-11-06T13:14:09Z"
+    },
+    "deicing": null,
+    "airportLongName": "John Wayne Airport-Orange County",
+    "latitude": "33.6763",
+    "longitude": "-117.8674"
+  },
+  {
+    "airportId": "YYZ",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "5b78098a-8f12-4632-b5fe-db2c20262c04",
+      "createdAt": "2025-11-06T14:35:35Z",
+      "airportId": "YYZ",
+      "sourceTimeStamp": "2025-11-06T14:34:48Z",
+      "updatedAt": "2025-11-06T14:35:35Z",
+      "impactingCondition": "other",
+      "avgDelay": 33.0,
+      "maxDelay": 78,
+      "startTime": "2025-11-06T15:30:00Z",
+      "endTime": "2025-11-06T17:29:00Z",
+      "center": "CZY",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=6008&adv_date=11062025&facId=YYZ&title=ATCSCC ADVZY 008 CYYZ/CZY 11/06/2025 CDM GROUND DELAY PROGRAM&titleDate=11/06/2025",
+      "departureScope": null,
+      "includedFacilities": ["CZY", "ZAU", "ZDC", "ZNY", "ZOB", "ZBW", "ZID", "CZM", "ZMP", "CZU"],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "9a71cc82-c452-4d22-8d4c-eb8d59421e1e",
+        "controlElement": "CYYZ",
+        "delayProgramType": "GDP",
+        "startTime": "2025-11-06T15:30:00Z",
+        "endTime": "2025-11-06T17:29:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2025-11-06T15:30:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 55,
+              "seq": 1
+            },
+            {
+              "delay": 55,
+              "seq": 2
+            },
+            {
+              "delay": 50,
+              "seq": 3
+            },
+            {
+              "delay": 44,
+              "seq": 4
+            },
+            {
+              "delay": 35,
+              "seq": 5
+            },
+            {
+              "delay": 26,
+              "seq": 6
+            },
+            {
+              "delay": 20,
+              "seq": 7
+            },
+            {
+              "delay": 15,
+              "seq": 8
+            }
+          ]
+        },
+        "sourceTimeStamp": "2025-11-06T14:34:48Z",
+        "createdAt": "2025-08-21T21:01:08Z",
+        "updatedAt": "2025-11-06T14:35:43Z"
+      },
+      "includedFlights": "ALL CNDN AND CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Toronto Pearson International Airport",
+    "latitude": "43.67809213715808",
+    "longitude": "-79.62533524174765"
+  }
+]

@@ -31,16 +31,25 @@ pushing.
 ## Architecture
 
 ```
-index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+index.js                          SDK wiring only: registerHandlers() then connect()
+src/app.js                        every SDK handler -> service; configuration actions
+src/service.js                    followed airports, refresh timer, devices/states, scene trigger, actions
+src/faa.js                        FAA NAS Status client (api/airport-events, JSON, no key)
+src/status.js                     one airport of the feed -> events, delays, causes, level 0-3, closures
+src/airports.js                   the 77 major airports (ASPM) by name; code, ICAO and city lookup
+src/devices.js                    the Gladys device of an airport, its states and texts
+src/scenes.js                     scene action handler (manifest `scene_actions`)
+src/widgets.js                    dashboard widget handler (manifest `widgets`)
+src/messages.js                   texts sent from the container (en, fr, de, es), cause and level names
+src/text.js                       fold, clip, local time of an FAA time
+src/store.js                      /data/airports.json (atomic, coalesced writes)
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
-gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
+gladys-assistant-integration.json manifest: config, actions, widget, scene trigger and action
+docs/{en,fr,de,es}.md             user documentation, re-hosted by Gladys (en and fr mandatory)
 test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
+test/helpers/world.js             fake Gladys + fake FAA on the fixtures + manual clock + /data
+test/helpers/scenario.js          quiet morning -> thunderstorms -> all lifted -> closed again
+test/fixtures/faa                 real api/airport-events answers (3 from the Wayback Machine, 1 of 24/10/2026)
 .github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
 ```
 
@@ -70,8 +79,9 @@ test/                             node --test, against the SDK's fake Gladys (in
   `type: "provider"`: 5.1.0). `test/manifest.test.js` ties the manifest to the
   code (defaults, action, scene and widget handlers): change both sides
   together.
-- **User-facing text** is bilingual (English and French): action messages,
-  manifest texts, and `docs/en.md` / `docs/fr.md`, kept in sync.
+- **User-facing text** is in four languages (English, French, German with
+  "du", Spanish with "usted"): action messages, manifest texts, feature names
+  and `docs/{en,fr,de,es}.md`, kept in sync (`test/i18n.test.js`).
 - **Style.** Prettier formats, ESLint catches mistakes. Comments explain why,
   in English. Tests never touch the network.
 
@@ -233,3 +243,40 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - Docs `en`, `fr`, `de`, `es` avec les mêmes sections.
 - Chauffe, ouverture, sécurité : ne rien rendre pilotable « comme un thermostat » ou par un assistant
   vocal quand une erreur serait dangereuse (leçon d'OctoPrint).
+
+# Intégration FAA (notes de développement, 24/10/2026)
+
+## API (`nasstatus.faa.gov`, ouverte, sans clé ni quota publié)
+
+- **`/api/airport-events` (JSON)**, celui de la page NAS Status de la FAA : un élément par aéroport
+  **ayant un événement** (absent = trafic normal ; il ne dit donc pas si un code existe). Champs :
+  `groundStop`, `groundDelay`, `arrivalDelay`, `departureDelay`, `airportClosure`, `freeForm`,
+  `airportConfig`, `deicing`, `airportLongName`. Une liste vide est une réponse normale ; tout ce qui
+  n'est pas une liste est une erreur (pas « tout va bien »).
+- **Préféré au XML `/api/airport-status-information`** (celui de HA `faadelays`) : le XML range en
+  « Airport Closures » tous les NOTAM « AD AP CLSD TO ... GA ACFT » (restrictions pour l'aviation
+  générale), si bien que LAX ou SAN y sont « fermés » des mois ; le JSON les met en `freeForm`
+  (ignoré) et garde `airportClosure` pour les vraies fermetures.
+- `groundStop` / `groundDelay` : `impactingCondition` en clair (« thunderstorms », « low ceilings »,
+  parfois en majuscules), `endTime` UTC ; programme : `avgDelay` (flottant) et `maxDelay` en
+  minutes. `departureDelay` / `arrivalDelay` : `averageDelay` (chaîne de minutes),
+  `arrivalDeparture.min`/`max` **en mots** (« 1 hour and 16 minutes »), `trend`, `reason` codé
+  (« TM Initiatives:SWAP:WX », « ZDC / VOL:Compacted Demand », « EQ:OCL: Equipment »).
+- **Fermetures** : la FAA garde un NOTAM à horaires quotidiens toute la période, jour et nuit (PVD
+  « DLY 0430-0945 » listé à 20:49 UTC ; MRY « TUE-SAT 0701-1200 ») : on ne compte que la plage
+  horaire (UTC, y compris à cheval sur minuit). « CLSD EXC SKED ACFT » (ALO) laisse passer les vols
+  réguliers : pas une fermeture pour un voyageur. Une fermeture pas encore commencée ne compte pas.
+- Les archives Wayback de `airport-events` sont servies **gzip** même avec `id_` : `gunzip`.
+
+## Choix
+
+- Un appareil par aéroport (`airport:<code>`), 11 fonctionnalités ; niveau 0-3 en `risk/integer` (0
+  normal, 1 retards départ/arrivée, 2 programme, 3 arrêt au sol ou fermeture), quatre
+  `input/binary`, quatre `duration/integer` en minutes (retard à l'arrivée = le plus grand du retard
+  signalé et du programme), deux `text/text` sans historique.
+- Déclencheur unique `airport_status_changed`, événement en `multi_select` (`closed`, `reopened`,
+  `ground_stop_*`, `delay_*` ; « delay » = programme ou retards départ/arrivée, l'arrêt au sol a
+  ses propres événements). Mémoire en RAM, rien à la première lecture.
+- 5 ou 10 min, une requête pour tous les aéroports ; 20 aéroports au plus. Heures affichées dans le
+  fuseau de Gladys (`TZ`), avec la date au-delà de 20 h.
+- Catégorie `services` (le vocabulaire du store n'a pas de « transports »), transport `cloud`.

@@ -1,0 +1,1331 @@
+[
+  {
+    "airportId": "ABE",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "8bab331a-9839-4560-8aa8-725e9ad9524a",
+      "airportId": "ABE",
+      "createdAt": "2026-01-25T19:12:21Z",
+      "updatedAt": "2026-01-25T19:12:21Z",
+      "startTime": "2026-01-25T19:07:00Z",
+      "endTime": "2026-01-26T01:00:00Z",
+      "simpleText": "!ABE 01/359 ABE AD AP CLSD 2601251907-2601260100",
+      "text": "",
+      "notamNumber": 359,
+      "issuedDate": "2026-01-25T19:07:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Lehigh Valley International",
+    "latitude": "40.6510",
+    "longitude": "-75.4439"
+  },
+  {
+    "airportId": "ABQ",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": {
+      "id": "5c284f2d-f90e-4fe2-95bb-ec57c88f5aa7",
+      "createdAt": "2026-01-25T13:05:41Z",
+      "airportId": "ABQ",
+      "updatedAt": "2026-01-25T13:05:41Z",
+      "eventTime": "2026-01-25T13:04:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Albuquerque International Sunport",
+    "latitude": "35.0432",
+    "longitude": "-106.6129"
+  },
+  {
+    "airportId": "ACK",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "d2eb2625-01b9-4d85-9671-e19b1b7d8246",
+      "airportId": "ACK",
+      "createdAt": null,
+      "updatedAt": "2026-01-25T18:31:05Z",
+      "startTime": "2026-01-25T17:55:00Z",
+      "endTime": "2026-01-26T18:00:00Z",
+      "simpleText": "!ACK 01/127 ACK AD AP CLSD EXC LIFE FLT HEL OPS 2601251755-2601261800",
+      "text": "except LIFE FLT HEL OPS",
+      "notamNumber": 127,
+      "issuedDate": "2026-01-25T18:11:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Nantucket Memorial",
+    "latitude": "41.2570",
+    "longitude": "-70.0637"
+  },
+  {
+    "airportId": "ACT",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "302a1f29-a428-4d24-9b29-f8ac7e1ac1cc",
+      "airportId": "ACT",
+      "createdAt": "2026-01-25T19:42:53Z",
+      "updatedAt": "2026-01-25T19:42:53Z",
+      "startTime": "2026-01-25T19:41:00Z",
+      "endTime": "2026-01-26T18:00:00Z",
+      "simpleText": "!ACT 01/063 ACT AD AP CLSD 2601251941-2601261800EST",
+      "text": "",
+      "notamNumber": 63,
+      "issuedDate": "2026-01-25T19:41:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Waco Regional",
+    "latitude": "31.6135",
+    "longitude": "-97.2262"
+  },
+  {
+    "airportId": "AFW",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "f9dfae2e-63cb-4ff2-a4b1-ff322720313d",
+      "airportId": "AFW",
+      "createdAt": "2026-01-25T17:11:48Z",
+      "updatedAt": "2026-01-25T17:11:48Z",
+      "startTime": "2026-01-25T17:08:00Z",
+      "endTime": "2026-01-26T00:01:00Z",
+      "simpleText": "!AFW 01/076 AFW AD AP CLSD 2601251708-2601260001",
+      "text": "",
+      "notamNumber": 76,
+      "issuedDate": "2026-01-25T17:08:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Fort Worth Alliance",
+    "latitude": "32.987269513164634",
+    "longitude": "-97.31329952941861"
+  },
+  {
+    "airportId": "ALB",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": {
+      "id": "8336e64b-75d9-43bf-95d9-c9139df97df8",
+      "createdAt": "2026-01-18T19:16:37Z",
+      "airportId": "ALB",
+      "updatedAt": "2026-01-25T14:13:39Z",
+      "eventTime": "2026-01-25T14:12:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Albany International",
+    "latitude": "42.7487",
+    "longitude": "-73.8054"
+  },
+  {
+    "airportId": "ATL",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "e707ccdd-318d-4d5d-9e0c-3e19d4a7ac7c",
+      "createdAt": "2026-01-25T19:26:23Z",
+      "airportId": "ATL",
+      "arrivalRunwayConfig": " ",
+      "departureRunwayConfig": "26L/27R",
+      "arrivalRate": 0,
+      "sourceTimeStamp": "2026-01-25T19:26:22Z"
+    },
+    "deicing": {
+      "id": "15887b34-defc-41b8-9950-e7d180855018",
+      "createdAt": "2026-01-25T16:22:33Z",
+      "airportId": "ATL",
+      "updatedAt": "2026-01-25T16:23:10Z",
+      "eventTime": "2026-01-25T11:36:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Hartsfield-Jackson Atlanta International",
+    "latitude": "33.6407",
+    "longitude": "-84.4277"
+  },
+  {
+    "airportId": "AVP",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "8757f332-1065-4a00-b0c8-f525ca974823",
+      "airportId": "AVP",
+      "createdAt": "2026-01-25T18:47:18Z",
+      "updatedAt": "2026-01-25T18:47:18Z",
+      "startTime": "2026-01-25T18:42:00Z",
+      "endTime": "2026-01-25T23:00:00Z",
+      "simpleText": "!AVP 01/217 AVP AD AP CLSD 2601251842-2601252300",
+      "text": "",
+      "notamNumber": 217,
+      "issuedDate": "2026-01-25T18:42:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Wilkes-Barre/Scranton International",
+    "latitude": "41.3374",
+    "longitude": "-75.7238"
+  },
+  {
+    "airportId": "BDL",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "4eec0b1f-a2f6-477d-91d4-46fba6abbba7",
+      "createdAt": "2026-01-25T13:39:31Z",
+      "airportId": "BDL",
+      "arrivalRunwayConfig": "06",
+      "departureRunwayConfig": " ",
+      "arrivalRate": 26,
+      "sourceTimeStamp": "2026-01-25T13:39:30Z"
+    },
+    "deicing": {
+      "id": "f634a4a3-75b1-457f-b772-2580b378211a",
+      "createdAt": "2026-01-25T13:36:36Z",
+      "airportId": "BDL",
+      "updatedAt": "2026-01-25T13:36:36Z",
+      "eventTime": "2026-01-25T13:34:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Bradley International",
+    "latitude": "41.9390",
+    "longitude": "-72.6869"
+  },
+  {
+    "airportId": "BOS",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "cca0e176-0b48-4e0d-bf0b-0f1e134b63d6",
+      "airportId": "BOS",
+      "createdAt": null,
+      "updatedAt": "2026-01-25T02:48:08Z",
+      "startTime": "2026-01-25T11:00:00Z",
+      "endTime": "2026-01-27T11:00:00Z",
+      "simpleText": "!BOS 01/969 BOS AD AP CLSD TO NON SKED TRANSIENT ACFT EXC 4HR PPR 617-561-1919 2601251100-2601271100",
+      "text": "TO NON SKED TRANSIENT ACFT EXC 4HR PPR 617-561-1919",
+      "notamNumber": 969,
+      "issuedDate": "2026-01-25T02:36:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "7f2e4446-449d-4c0e-82a8-607f620f70a2",
+      "createdAt": "2026-01-25T10:40:33Z",
+      "airportId": "BOS",
+      "arrivalRunwayConfig": "04R",
+      "departureRunwayConfig": "04R/4L/09",
+      "arrivalRate": 38,
+      "sourceTimeStamp": "2026-01-25T10:40:33Z"
+    },
+    "deicing": {
+      "id": "c941c20b-fc19-47f7-8748-d9af5d29781f",
+      "createdAt": "2026-01-25T15:27:16Z",
+      "airportId": "BOS",
+      "updatedAt": "2026-01-25T15:30:52Z",
+      "eventTime": "2026-01-25T15:28:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "General Edward Lawrence Logan International",
+    "latitude": "42.3656",
+    "longitude": "-71.0096"
+  },
+  {
+    "airportId": "BUF",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": {
+      "id": "e5aa28e5-15a0-459c-b4a2-ce8c8273b42e",
+      "createdAt": "2026-01-25T10:37:24Z",
+      "airportId": "BUF",
+      "updatedAt": "2026-01-25T10:37:24Z",
+      "eventTime": "2026-01-25T10:36:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Buffalo Niagara International",
+    "latitude": "42.9397",
+    "longitude": "-78.7296"
+  },
+  {
+    "airportId": "CDW",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "f0df23b1-0e4b-46e5-a131-5cd823f02b6e",
+      "airportId": "CDW",
+      "createdAt": "2026-01-25T12:56:36Z",
+      "updatedAt": "2026-01-25T12:56:36Z",
+      "startTime": "2026-01-25T12:56:00Z",
+      "endTime": "2026-01-27T13:00:00Z",
+      "simpleText": "!CDW 01/081 CDW AD AP CLSD 2601251256-2601271300",
+      "text": "",
+      "notamNumber": 81,
+      "issuedDate": "2026-01-25T12:56:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Essex County Airport",
+    "latitude": "40.87597659808587",
+    "longitude": "-74.2767047306871"
+  },
+  {
+    "airportId": "DFW",
+    "groundStop": null,
+    "groundDelay": {
+      "id": "4148905d-7c05-4a13-a6ca-556789b203ef",
+      "createdAt": "2026-01-25T19:06:19Z",
+      "airportId": "DFW",
+      "sourceTimeStamp": "2026-01-25T19:05:08Z",
+      "updatedAt": "2026-01-25T19:06:19Z",
+      "impactingCondition": "snow or ice",
+      "avgDelay": 125.0,
+      "maxDelay": 226,
+      "startTime": "2026-01-25T19:00:00Z",
+      "endTime": "2026-01-26T03:59:00Z",
+      "center": "ZFW",
+      "advisoryUrl": "https://www.fly.faa.gov/adv/adv_otherdis.jsp?advn=62&adv_date=01252026&facId=DFW&title=ATCSCC ADVZY 062 DFW/ZFW 01/25/2026 CDM GROUND DELAY PROGRAM&titleDate=01/25/2026",
+      "departureScope": null,
+      "includedFacilities": [
+        "ZLA",
+        "ZAU",
+        "ZLC",
+        "ZTL",
+        "ZDC",
+        "ZNY",
+        "ZHU",
+        "ZJX",
+        "ZFW",
+        "ZOB",
+        "ZDV",
+        "ZOA",
+        "ZSE",
+        "ZBW",
+        "ZMA",
+        "ZKC",
+        "ZME",
+        "ZID",
+        "ZAB",
+        "ZMP"
+      ],
+      "fuelFlowAdvisoryDelayTime": {
+        "id": "fd7e4d42-2ee0-4e44-8d59-4abbdfa1458c",
+        "controlElement": "DFW",
+        "delayProgramType": "GDP",
+        "startTime": "2026-01-25T19:00:00Z",
+        "endTime": "2026-01-26T03:59:00Z",
+        "dasDelays": {
+          "delayTimeAmount": "2026-01-25T19:00:00.000+00:00",
+          "dasDelay": [
+            {
+              "delay": 75,
+              "seq": 1
+            },
+            {
+              "delay": 72,
+              "seq": 2
+            },
+            {
+              "delay": 69,
+              "seq": 3
+            },
+            {
+              "delay": 64,
+              "seq": 4
+            },
+            {
+              "delay": 61,
+              "seq": 5
+            },
+            {
+              "delay": 62,
+              "seq": 6
+            },
+            {
+              "delay": 63,
+              "seq": 7
+            },
+            {
+              "delay": 64,
+              "seq": 8
+            },
+            {
+              "delay": 67,
+              "seq": 9
+            },
+            {
+              "delay": 72,
+              "seq": 10
+            },
+            {
+              "delay": 78,
+              "seq": 11
+            },
+            {
+              "delay": 86,
+              "seq": 12
+            },
+            {
+              "delay": 95,
+              "seq": 13
+            },
+            {
+              "delay": 106,
+              "seq": 14
+            },
+            {
+              "delay": 119,
+              "seq": 15
+            },
+            {
+              "delay": 132,
+              "seq": 16
+            },
+            {
+              "delay": 143,
+              "seq": 17
+            },
+            {
+              "delay": 153,
+              "seq": 18
+            },
+            {
+              "delay": 159,
+              "seq": 19
+            },
+            {
+              "delay": 164,
+              "seq": 20
+            },
+            {
+              "delay": 165,
+              "seq": 21
+            },
+            {
+              "delay": 163,
+              "seq": 22
+            },
+            {
+              "delay": 160,
+              "seq": 23
+            },
+            {
+              "delay": 156,
+              "seq": 24
+            },
+            {
+              "delay": 151,
+              "seq": 25
+            },
+            {
+              "delay": 147,
+              "seq": 26
+            },
+            {
+              "delay": 143,
+              "seq": 27
+            },
+            {
+              "delay": 139,
+              "seq": 28
+            },
+            {
+              "delay": 135,
+              "seq": 29
+            },
+            {
+              "delay": 132,
+              "seq": 30
+            },
+            {
+              "delay": 127,
+              "seq": 31
+            },
+            {
+              "delay": 122,
+              "seq": 32
+            },
+            {
+              "delay": 116,
+              "seq": 33
+            },
+            {
+              "delay": 108,
+              "seq": 34
+            },
+            {
+              "delay": 98,
+              "seq": 35
+            },
+            {
+              "delay": 87,
+              "seq": 36
+            }
+          ]
+        },
+        "sourceTimeStamp": "2026-01-25T19:05:08Z",
+        "createdAt": "2026-01-25T19:06:27Z",
+        "updatedAt": "2026-01-25T19:06:27Z"
+      },
+      "includedFlights": "ALL CONTIGUOUS US DEP",
+      "fadtParamType": "GDP",
+      "gsCancelReceivedTs": null,
+      "gsCancelSourceTs": null,
+      "compression": false,
+      "blanket": false
+    },
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "a9b16668-d337-4dcc-8da0-cfce3f1f6259",
+      "createdAt": "2026-01-25T16:43:27Z",
+      "airportId": "DFW",
+      "arrivalRunwayConfig": "35C",
+      "departureRunwayConfig": "35L",
+      "arrivalRate": 28,
+      "sourceTimeStamp": "2026-01-25T16:43:26Z"
+    },
+    "deicing": null,
+    "airportLongName": "Dallas/Ft Worth International",
+    "latitude": "32.8998",
+    "longitude": "-97.0403"
+  },
+  {
+    "airportId": "DTW",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "dd6d294f-007f-4686-9e91-33821be8fc94",
+      "createdAt": "2026-01-25T10:50:02Z",
+      "airportId": "DTW",
+      "arrivalRunwayConfig": " ",
+      "departureRunwayConfig": "4R/3L",
+      "arrivalRate": 0,
+      "sourceTimeStamp": "2026-01-25T10:50:01Z"
+    },
+    "deicing": {
+      "id": "aea5266a-17bf-4a93-84aa-abe03a148727",
+      "createdAt": "2026-01-25T16:29:33Z",
+      "airportId": "DTW",
+      "updatedAt": "2026-01-25T16:31:07Z",
+      "eventTime": "2026-01-25T16:30:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Detroit Metropolitan Wayne County",
+    "latitude": "42.2162",
+    "longitude": "-83.3554"
+  },
+  {
+    "airportId": "EWB",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "5bb5cef2-dc65-4d03-9f4f-7cd97177eb53",
+      "airportId": "EWB",
+      "createdAt": "2026-01-25T18:17:51Z",
+      "updatedAt": "2026-01-25T18:17:51Z",
+      "startTime": "2026-01-25T18:17:00Z",
+      "endTime": "2026-01-26T13:00:00Z",
+      "simpleText": "!EWB 01/085 EWB AD AP CLSD EXC HEL 2601251817-2601261300",
+      "text": "except HEL",
+      "notamNumber": 85,
+      "issuedDate": "2026-01-25T18:17:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "New Bedford Regional",
+    "latitude": "41.6737",
+    "longitude": "-70.9581"
+  },
+  {
+    "airportId": "FAY",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "3cbc3366-b0ac-4b42-8a3c-30997ae342c8",
+      "airportId": "FAY",
+      "createdAt": null,
+      "updatedAt": "2026-01-25T17:33:56Z",
+      "startTime": "2026-01-25T17:33:00Z",
+      "endTime": "2026-01-25T20:00:00Z",
+      "simpleText": "!FAY 01/040 FAY AD AP CLSD 2601251733-2601252000",
+      "text": "",
+      "notamNumber": 40,
+      "issuedDate": "2026-01-25T17:33:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Fayetteville Regional/Grannis Field",
+    "latitude": "34.9911",
+    "longitude": "-78.8868"
+  },
+  {
+    "airportId": "FYV",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "3453ec44-6918-4f72-84e5-b1309b709aaf",
+      "airportId": "FYV",
+      "createdAt": "2026-01-25T16:58:49Z",
+      "updatedAt": "2026-01-25T16:58:49Z",
+      "startTime": "2026-01-25T16:58:00Z",
+      "endTime": "2026-01-25T21:00:00Z",
+      "simpleText": "!FYV 01/031 FYV AD AP CLSD 2601251658-2601252100",
+      "text": "",
+      "notamNumber": 31,
+      "issuedDate": "2026-01-25T16:58:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Drake Field",
+    "latitude": "36.0033",
+    "longitude": "-94.1719"
+  },
+  {
+    "airportId": "GLH",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "f1dbf52a-6ea4-4cc2-a12f-64e23049f13f",
+      "airportId": "GLH",
+      "createdAt": "2026-01-25T19:34:43Z",
+      "updatedAt": "2026-01-25T19:34:43Z",
+      "startTime": "2026-01-25T19:34:00Z",
+      "endTime": "2026-01-27T13:00:00Z",
+      "simpleText": "!GLH 01/025 GLH AD AP CLSD 2601251934-2601271300",
+      "text": "",
+      "notamNumber": 25,
+      "issuedDate": "2026-01-25T19:34:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Mid Delta Regional",
+    "latitude": "33.4797",
+    "longitude": "-90.9901"
+  },
+  {
+    "airportId": "GMU",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "ea03a824-3fa2-43ab-94c3-f4e22df02773",
+      "airportId": "GMU",
+      "createdAt": "2026-01-25T11:14:01Z",
+      "updatedAt": "2026-01-25T11:14:01Z",
+      "startTime": "2026-01-25T11:13:00Z",
+      "endTime": "2026-01-26T15:00:00Z",
+      "simpleText": "!GMU 01/005 GMU AD AP CLSD 2601251113-2601261500",
+      "text": "",
+      "notamNumber": 5,
+      "issuedDate": "2026-01-25T11:13:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Greenville Downtown",
+    "latitude": "34.8503",
+    "longitude": "-82.3512"
+  },
+  {
+    "airportId": "GON",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "c7ea52cf-30a0-4a8e-901d-15559c68462d",
+      "airportId": "GON",
+      "createdAt": "2026-01-25T13:40:50Z",
+      "updatedAt": "2026-01-25T13:40:50Z",
+      "startTime": "2026-01-25T15:00:00Z",
+      "endTime": "2026-01-26T12:00:00Z",
+      "simpleText": "!GON 01/082 GON AD AP CLSD 2601251500-2601261200",
+      "text": "",
+      "notamNumber": 82,
+      "issuedDate": "2026-01-25T13:36:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Groton-New London",
+    "latitude": "41.3301",
+    "longitude": "-72.0466"
+  },
+  {
+    "airportId": "GSP",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "24e99c60-30d4-4b61-a82a-95ff6fbd7868",
+      "airportId": "GSP",
+      "createdAt": "2026-01-25T11:22:55Z",
+      "updatedAt": "2026-01-25T11:22:55Z",
+      "startTime": "2026-01-25T11:21:00Z",
+      "endTime": "2026-01-25T23:00:00Z",
+      "simpleText": "!GSP 01/066 GSP AD AP CLSD 2601251121-2601252300",
+      "text": "",
+      "notamNumber": 66,
+      "issuedDate": "2026-01-25T11:21:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Greenville-Spartanburg International",
+    "latitude": "34.8958",
+    "longitude": "-82.2171"
+  },
+  {
+    "airportId": "HPN",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": {
+      "id": "a7a99185-ea68-4055-90a1-f08491d9b1e2",
+      "createdAt": "2026-01-25T10:49:17Z",
+      "airportId": "HPN",
+      "updatedAt": "2026-01-25T10:49:17Z",
+      "eventTime": "2026-01-25T11:00:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Westchester Co",
+    "latitude": "41.0683",
+    "longitude": "-73.7085"
+  },
+  {
+    "airportId": "HTS",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "7b0ad8bf-73c9-420c-b3a7-f0397e07fc07",
+      "airportId": "HTS",
+      "createdAt": "2026-01-25T02:35:59Z",
+      "updatedAt": "2026-01-25T02:35:59Z",
+      "startTime": "2026-01-25T02:35:00Z",
+      "endTime": "2026-01-25T21:00:00Z",
+      "simpleText": "!HTS 01/036 HTS AD AP CLSD 2601250235-2601252100",
+      "text": "",
+      "notamNumber": 36,
+      "issuedDate": "2026-01-25T02:35:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Tri-State/Milton J Ferguson Field",
+    "latitude": "38.3691",
+    "longitude": "-82.5558"
+  },
+  {
+    "airportId": "HVN",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "1ae9b1fe-9831-404d-8336-ab3400c0315d",
+      "airportId": "HVN",
+      "createdAt": "2026-01-23T18:59:51Z",
+      "updatedAt": "2026-01-23T18:59:51Z",
+      "startTime": "2026-01-25T13:00:00Z",
+      "endTime": "2026-01-26T16:00:00Z",
+      "simpleText": "!HVN 01/196 HVN AD AP CLSD 2601251300-2601261600",
+      "text": "",
+      "notamNumber": 196,
+      "issuedDate": "2026-01-23T18:59:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Tweed-New Haven",
+    "latitude": "41.2647",
+    "longitude": "-72.8855"
+  },
+  {
+    "airportId": "HYA",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "b25457ea-3b13-41fb-bf88-c6dd3946d62b",
+      "airportId": "HYA",
+      "createdAt": "2026-01-25T18:51:16Z",
+      "updatedAt": "2026-01-25T18:51:16Z",
+      "startTime": "2026-01-25T18:49:00Z",
+      "endTime": "2026-01-28T12:00:00Z",
+      "simpleText": "!HYA 01/163 HYA AD AP CLSD EXC HEL 2601251849-2601281200EST",
+      "text": "except HEL",
+      "notamNumber": 163,
+      "issuedDate": "2026-01-25T18:49:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Barnstable Muni-Boardman/Polando Field",
+    "latitude": "41.6672",
+    "longitude": "-70.2847"
+  },
+  {
+    "airportId": "LAS",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "9e713cc4-27b2-4750-9db1-efbd2770aa9a",
+      "airportId": "LAS",
+      "createdAt": null,
+      "updatedAt": "2025-10-28T17:26:00Z",
+      "startTime": "2025-10-28T17:06:00Z",
+      "endTime": "2026-01-28T23:00:00Z",
+      "simpleText": "!LAS 10/296 LAS AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR 702-261-7775 2510281706-2601282300",
+      "text": "TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR 702-261-7775",
+      "notamNumber": 296,
+      "issuedDate": "2025-10-28T17:17:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "e85a0875-fdc2-49a0-9fd1-07874fd9e6c2",
+      "createdAt": "2026-01-25T13:53:38Z",
+      "airportId": "LAS",
+      "arrivalRunwayConfig": "01L/26L",
+      "departureRunwayConfig": "01R/01L",
+      "arrivalRate": 64,
+      "sourceTimeStamp": "2026-01-25T13:53:38Z"
+    },
+    "deicing": null,
+    "airportLongName": "Harry Reid International",
+    "latitude": "36.0840",
+    "longitude": "-115.1537"
+  },
+  {
+    "airportId": "LAW",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "8136a201-3457-4383-b290-3f6748a42c48",
+      "airportId": "LAW",
+      "createdAt": "2026-01-25T16:14:46Z",
+      "updatedAt": "2026-01-25T16:14:46Z",
+      "startTime": "2026-01-25T16:10:00Z",
+      "endTime": "2026-01-25T22:00:00Z",
+      "simpleText": "!LAW 01/030 LAW AD AP CLSD 2601251610-2601252200",
+      "text": "",
+      "notamNumber": 30,
+      "issuedDate": "2026-01-25T16:10:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Lawton-Fort Sill Regional",
+    "latitude": "34.5692",
+    "longitude": "-98.4157"
+  },
+  {
+    "airportId": "LEX",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "4c63d66c-f6bf-4df7-95a8-484978e3db15",
+      "airportId": "LEX",
+      "createdAt": "2026-01-25T18:48:00Z",
+      "updatedAt": "2026-01-25T18:48:00Z",
+      "startTime": "2026-01-25T18:46:00Z",
+      "endTime": "2026-01-25T22:00:00Z",
+      "simpleText": "!LEX 01/300 LEX AD AP CLSD 2601251846-2601252200",
+      "text": "",
+      "notamNumber": 300,
+      "issuedDate": "2026-01-25T18:46:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Blue Grass",
+    "latitude": "38.0378",
+    "longitude": "-84.6029"
+  },
+  {
+    "airportId": "LGA",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "6edd4de7-4bf6-47d8-b87e-302d5233d382",
+      "airportId": "LGA",
+      "createdAt": "2026-01-25T18:07:58Z",
+      "updatedAt": "2026-01-25T18:07:58Z",
+      "startTime": "2026-01-25T18:05:00Z",
+      "endTime": "2026-01-26T01:00:00Z",
+      "simpleText": "!LGA 01/401 LGA AD AP CLSD 2601251805-2601260100",
+      "text": "",
+      "notamNumber": 401,
+      "issuedDate": "2026-01-25T18:05:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "5761f06f-1a9e-41b0-955b-f2375760b2e6",
+      "createdAt": "2026-01-25T14:49:08Z",
+      "airportId": "LGA",
+      "arrivalRunwayConfig": "ILS 04",
+      "departureRunwayConfig": "04",
+      "arrivalRate": 34,
+      "sourceTimeStamp": "2026-01-25T14:49:07Z"
+    },
+    "deicing": null,
+    "airportLongName": "La Guardia",
+    "latitude": "40.7769",
+    "longitude": "-73.8740"
+  },
+  {
+    "airportId": "MHT",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "5c86632f-4af0-49aa-92c1-da5e7a41456c",
+      "createdAt": "2026-01-25T10:40:33Z",
+      "airportId": "MHT",
+      "arrivalRunwayConfig": "35",
+      "departureRunwayConfig": "35",
+      "arrivalRate": 29,
+      "sourceTimeStamp": "2026-01-25T10:40:33Z"
+    },
+    "deicing": {
+      "id": "81ec9eeb-73cf-4aa6-aba8-3302e1382d83",
+      "createdAt": "2026-01-25T16:51:31Z",
+      "airportId": "MHT",
+      "updatedAt": "2026-01-25T16:51:31Z",
+      "eventTime": "2026-01-25T16:49:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Manchester-Boston Regional Airport",
+    "latitude": "42.92968700000001",
+    "longitude": "-71.4354108190445"
+  },
+  {
+    "airportId": "MKL",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "31aeb9f2-aada-41bf-9c51-b6d1fea74764",
+      "airportId": "MKL",
+      "createdAt": "2026-01-25T17:03:10Z",
+      "updatedAt": "2026-01-25T17:03:10Z",
+      "startTime": "2026-01-25T16:59:00Z",
+      "endTime": "2026-01-27T14:00:00Z",
+      "simpleText": "!MKL 01/251 MKL AD AP CLSD 2601251659-2601271400",
+      "text": "",
+      "notamNumber": 251,
+      "issuedDate": "2026-01-25T17:00:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Mc Kellar-Sipes Regional",
+    "latitude": "35.6027",
+    "longitude": "-88.9208"
+  },
+  {
+    "airportId": "MMU",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "b2dfcafb-0b57-4a9b-b552-df7cccbba80f",
+      "airportId": "MMU",
+      "createdAt": "2026-01-25T16:49:13Z",
+      "updatedAt": "2026-01-25T16:49:13Z",
+      "startTime": "2026-01-25T17:00:00Z",
+      "endTime": "2026-01-26T05:00:00Z",
+      "simpleText": "!MMU 01/227 MMU AD AP CLSD 2601251700-2601260500EST",
+      "text": "",
+      "notamNumber": 227,
+      "issuedDate": "2026-01-25T16:46:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Morristown Airport",
+    "latitude": "40.7976",
+    "longitude": "-74.4158"
+  },
+  {
+    "airportId": "MWA",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "9c9ae023-f66c-4d05-b0fc-56c533dd56dc",
+      "airportId": "MWA",
+      "createdAt": "2026-01-25T18:34:44Z",
+      "updatedAt": "2026-01-25T18:34:44Z",
+      "startTime": "2026-01-25T18:20:00Z",
+      "endTime": "2026-01-26T13:00:00Z",
+      "simpleText": "!MWA 01/028 MWA AD AP CLSD 2601251820-2601261300",
+      "text": "",
+      "notamNumber": 28,
+      "issuedDate": "2026-01-25T18:20:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Williamson County Regional",
+    "latitude": "37.7472",
+    "longitude": "-89.0104"
+  },
+  {
+    "airportId": "ORD",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": {
+      "airportId": "ORD",
+      "reason": "WX:Snow/Ice",
+      "arrivalDeparture": {
+        "type": "Departure",
+        "min": "16 minutes",
+        "max": "30 minutes",
+        "trend": "Increasing"
+      },
+      "updateTime": "2026-01-25T16:15:00Z",
+      "averageDelay": "15",
+      "trend": "increasing"
+    },
+    "airportConfig": {
+      "id": "f4340a12-00f4-48d5-8751-d767f48b1e57",
+      "createdAt": "2026-01-25T11:21:54Z",
+      "airportId": "ORD",
+      "arrivalRunwayConfig": "27R/27C/28C",
+      "departureRunwayConfig": "22L/28R/27L",
+      "arrivalRate": 92,
+      "sourceTimeStamp": "2026-01-25T11:21:53Z"
+    },
+    "deicing": null,
+    "airportLongName": "Chicago OHare International",
+    "latitude": "41.9742",
+    "longitude": "-87.9073"
+  },
+  {
+    "airportId": "ORH",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "5ba42dbe-53b2-4a94-938f-71b6fd7f89bb",
+      "airportId": "ORH",
+      "createdAt": "2026-01-25T18:47:29Z",
+      "updatedAt": "2026-01-25T18:47:29Z",
+      "startTime": "2026-01-25T18:42:00Z",
+      "endTime": "2026-01-26T15:00:00Z",
+      "simpleText": "!ORH 01/223 ORH AD AP CLSD 2601251842-2601261500",
+      "text": "",
+      "notamNumber": 223,
+      "issuedDate": "2026-01-25T18:42:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Worcester Regional",
+    "latitude": "42.2681",
+    "longitude": "-71.8733"
+  },
+  {
+    "airportId": "PAH",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "762ab97b-1d61-41e6-9d98-90d05c830602",
+      "airportId": "PAH",
+      "createdAt": null,
+      "updatedAt": "2026-01-25T19:24:16Z",
+      "startTime": "2026-01-25T19:21:00Z",
+      "endTime": "2026-01-26T15:00:00Z",
+      "simpleText": "!PAH 01/030 PAH AD AP CLSD 2601251921-2601261500",
+      "text": "",
+      "notamNumber": 30,
+      "issuedDate": "2026-01-25T19:21:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Barkley Regional",
+    "latitude": "37.0612",
+    "longitude": "-88.7677"
+  },
+  {
+    "airportId": "PHF",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "e70b59ee-97aa-48c3-9ce3-35c0096b0cf8",
+      "airportId": "PHF",
+      "createdAt": "2026-01-25T12:09:52Z",
+      "updatedAt": "2026-01-25T12:09:52Z",
+      "startTime": "2026-01-25T12:07:00Z",
+      "endTime": "2026-01-26T04:00:00Z",
+      "simpleText": "!PHF 01/066 PHF AD AP CLSD 2601251207-2601260400",
+      "text": "",
+      "notamNumber": 66,
+      "issuedDate": "2026-01-25T12:07:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Newport News/Williamsburg International",
+    "latitude": "37.1307",
+    "longitude": "-76.4939"
+  },
+  {
+    "airportId": "PIT",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "25c23188-5407-477c-964f-39d2cd8d14d1",
+      "createdAt": "2026-01-25T10:12:45Z",
+      "airportId": "PIT",
+      "arrivalRunwayConfig": "10R",
+      "departureRunwayConfig": "10R",
+      "arrivalRate": 40,
+      "sourceTimeStamp": "2026-01-25T10:12:45Z"
+    },
+    "deicing": {
+      "id": "9473ed49-4f8c-40fd-a490-3aff8cf80ddf",
+      "createdAt": "2026-01-25T10:24:35Z",
+      "airportId": "PIT",
+      "updatedAt": "2026-01-25T10:24:35Z",
+      "eventTime": "2026-01-25T10:00:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Pittsburgh International",
+    "latitude": "40.4919",
+    "longitude": "-80.2352"
+  },
+  {
+    "airportId": "PVD",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": {
+      "id": "ecd2664a-e32a-4173-b685-c26f5eaa2c9e",
+      "createdAt": "2026-01-25T14:29:49Z",
+      "airportId": "PVD",
+      "updatedAt": "2026-01-25T14:29:49Z",
+      "eventTime": "2026-01-25T14:28:00Z",
+      "expTime": "2026-01-26T07:59:59Z"
+    },
+    "airportLongName": "Theodore Francis Green State",
+    "latitude": "41.7245",
+    "longitude": "-71.4303"
+  },
+  {
+    "airportId": "SAN",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "436a660d-2c39-4a6c-8cc0-10d176a6c877",
+      "airportId": "SAN",
+      "createdAt": null,
+      "updatedAt": "2026-01-07T15:10:25Z",
+      "startTime": "2026-01-12T08:00:00Z",
+      "endTime": "2026-03-19T08:00:00Z",
+      "simpleText": "!SAN 01/048 SAN AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 619-298-7704 2601120800-2603190800",
+      "text": "TO NON SKED TRANSIENT GA ACFT EXC PPR 619-298-7704",
+      "notamNumber": 48,
+      "issuedDate": "2026-01-07T15:03:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "4a56e746-b06c-4c01-bc23-54cbe0017867",
+      "createdAt": "2026-01-25T13:58:17Z",
+      "airportId": "SAN",
+      "arrivalRunwayConfig": "27",
+      "departureRunwayConfig": "27",
+      "arrivalRate": 24,
+      "sourceTimeStamp": "2026-01-25T13:58:16Z"
+    },
+    "deicing": null,
+    "airportLongName": "San Diego-Lindbergh Field",
+    "latitude": "32.7338",
+    "longitude": "-117.1933"
+  },
+  {
+    "airportId": "STX",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "dd19619b-789f-4840-83c5-e008ef9f9630",
+      "airportId": "STX",
+      "createdAt": null,
+      "updatedAt": "2026-01-02T16:26:11Z",
+      "startTime": "2026-01-02T16:16:00Z",
+      "endTime": "2026-02-28T21:00:00Z",
+      "simpleText": "!TISX 01/008 STX AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 340-201-4645 2601021616-2602282100",
+      "text": "TO NON SKED TRANSIENT GA ACFT EXC PPR 340-201-4645",
+      "notamNumber": 8,
+      "issuedDate": "2026-01-02T16:16:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": {
+      "id": "bcd06cb0-42a5-468c-ae35-40f89be949d8",
+      "createdAt": "2026-01-25T11:08:16Z",
+      "airportId": "STX",
+      "arrivalRunwayConfig": "10",
+      "departureRunwayConfig": "10",
+      "arrivalRate": 18,
+      "sourceTimeStamp": "2026-01-25T11:08:16Z"
+    },
+    "deicing": null,
+    "airportLongName": "Henry E. Rohlsen International Airport",
+    "latitude": "17.699169349916396",
+    "longitude": "-64.79710263171633"
+  },
+  {
+    "airportId": "SWF",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": {
+      "id": "b9fc79ef-566f-4f7a-b4f9-c3f7e9cb3034",
+      "airportId": "SWF",
+      "createdAt": "2026-01-25T19:32:14Z",
+      "updatedAt": "2026-01-25T19:32:14Z",
+      "startTime": "2026-01-25T19:25:00Z",
+      "endTime": "2026-01-25T22:00:00Z",
+      "simpleText": "!SWF 01/352 SWF AD AP CLSD 2601251925-2601252200",
+      "text": "",
+      "notamNumber": 352,
+      "issuedDate": "2026-01-25T19:25:00Z"
+    },
+    "freeForm": null,
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Stewart International",
+    "latitude": "41.4984",
+    "longitude": "-74.1008"
+  },
+  {
+    "airportId": "TUP",
+    "groundStop": null,
+    "groundDelay": null,
+    "airportClosure": null,
+    "freeForm": {
+      "id": "1acdcfef-d312-423e-aa59-d8f7213edbec",
+      "airportId": "TUP",
+      "createdAt": null,
+      "updatedAt": "2026-01-24T04:39:09Z",
+      "startTime": "2026-01-24T04:31:00Z",
+      "endTime": "2026-01-27T12:00:00Z",
+      "simpleText": "!TUP 01/006 TUP AD AP CLSD 2601240431-2601271200",
+      "text": "",
+      "notamNumber": 6,
+      "issuedDate": "2026-01-24T04:31:00Z"
+    },
+    "arrivalDelay": null,
+    "departureDelay": null,
+    "airportConfig": null,
+    "deicing": null,
+    "airportLongName": "Tupelo Municipal - C D Lemons",
+    "latitude": "34.2662",
+    "longitude": "-88.7663"
+  }
+]

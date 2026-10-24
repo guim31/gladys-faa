@@ -1,41 +1,62 @@
 // -----------------------------------------------------------------------------
-// Scene actions (SDK v0.14+, Gladys 5.1+).
+// Scene action (manifest `scene_actions`, Gladys 5.1+).
 //
-// A scene action is an OPERATION a scene author places in a scene, with
-// parameters and a result: "identify this device", "take a snapshot", "clean
-// these rooms". Each one is declared in the manifest `scene_actions` field
-// (key, label, `fields` in the config_schema grammar, scalar `outputs`) and
-// handled here, keyed by that same `key`; index.js registers every entry with
-// `gladys.onSceneAction(key, ...)`.
+// - get_airport_status: the status of a followed airport, as numbers for a
+//   "Continue only if" step (level, yes/no as 1/0, delays in minutes) and as a
+//   sentence ready for a message or a speaker ("JFK · New York JFK: Ground
+//   stop until 22:45. Cause: Thunderstorms.").
 //
-// Scene TRIGGERS are the other direction ("this happened"): they are fired by
-// the device that observes the event, see src/devices/motionSensor.js.
-//
-// The rules that matter:
-//   - `fields` arrive RESOLVED: scene variables substituted, defaults applied,
-//     validated by the core; a `"source": "devices"` field is the chosen
-//     device external_id;
-//   - resolve an object of the declared `outputs` (scalars only), readable by
-//     the following actions of the scene, or `undefined` for none. Keys not
-//     declared in the manifest are dropped by the core;
-//   - throwing fails THIS action only: the scene logs it and continues. A
-//     scene action is never a condition: return an output and let the scene
-//     author gate on it;
-//   - never fire a scene event as a consequence of a received action: a scene
-//     bound to that event would loop through the integration.
+// A scene action does not receive the user's language: the sentence follows
+// the `language` of the configuration. Outputs are numbers, never booleans:
+// the core's "Continue only if" compares with ===, and its value field only
+// produces numbers and strings (Gladys 5.2.0).
 // -----------------------------------------------------------------------------
 
-import { createLogger } from '@gladysassistant/integration-sdk';
-import { signalDevice } from './devices/index.js';
-
-const logger = createLogger({ name: 'scenes' });
+import { airportLabel } from './airports.js';
+import { reasonText, statusText } from './devices.js';
+import { TEXT, levelName, say } from './messages.js';
+import { SceneError } from './service.js';
+import { arrivalDelay, departureDelay } from './status.js';
+import { clip } from './text.js';
 
 export const SCENE_ACTIONS = {
-  // The ack is awaited under the action's `timeout_seconds` (15 s in the
-  // manifest), counted from the moment the scene reaches the action.
-  async identify_device(gladys, { fields, config }) {
-    logger.info(`Scene action identify_device <- ${fields.device}`);
-    const signalled = await signalDevice(gladys, fields.device, config);
-    return { signalled };
+  async get_airport_status(service, { fields }) {
+    const language = service.config.language;
+    const found = await service.statusOf(fields.airport);
+    if (!found) {
+      throw new SceneError(say(TEXT, language, 'gone'));
+    }
+    if (!found.status) {
+      throw new SceneError(say(TEXT, language, 'unavailable'));
+    }
+    const { airport, status } = found;
+    const now = service.now();
+    const name = airportLabel(airport);
+    const text = statusText(status, language, now);
+    const reason = status.level > 0 || status.closure ? reasonText(status, language) : '';
+    const departure = departureDelay(status);
+    const arrival = arrivalDelay(status);
+    return {
+      sentence: clip(
+        `${say(TEXT, language, 'sentence', { airport: name, status: text })}${
+          reason ? ` ${say(TEXT, language, 'causeSentence', { cause: reason })}` : ''
+        }`,
+        1000,
+      ),
+      airport_code: airport.code,
+      airport_name: name,
+      status: text,
+      level: status.level,
+      level_name: levelName(status.level, language),
+      delayed: status.delayed ? 1 : 0,
+      ground_stop: status.groundStop ? 1 : 0,
+      ground_delay: status.groundDelay ? 1 : 0,
+      closed: status.closure ? 1 : 0,
+      departure_delay: departure.average,
+      departure_delay_max: departure.maximum,
+      arrival_delay: arrival.average,
+      arrival_delay_max: arrival.maximum,
+      reason,
+    };
   },
 };

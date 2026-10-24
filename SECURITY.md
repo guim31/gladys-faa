@@ -30,6 +30,11 @@ Gladys before reporting a problem.
 
 In scope: the code of this repository and the Docker image it publishes.
 
+The integration needs no account and holds no secret. It stores under `/data`
+a single file, `airports.json`: the codes and names of the airports you follow.
+Its only network traffic is outbound HTTPS to `nasstatus.faa.gov`, with a
+timeout; it opens no port.
+
 Out of scope: Gladys Assistant itself (see its
 [security policy](https://github.com/GladysAssistant/Gladys/security/policy)),
-and the third-party services and devices the integration talks to.
+and the FAA services the integration reads.

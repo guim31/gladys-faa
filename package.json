@@ -1,8 +1,8 @@
 {
-  "name": "gladys-integration-template-js",
+  "name": "gladys-faa",
   "version": "1.0.0",
   "private": true,
-  "description": "Official starter template to build an external integration for Gladys Assistant with the JavaScript SDK.",
+  "description": "Gladys Assistant integration: US airport delays, ground stops and closures from the FAA NAS Status feed.",
   "type": "module",
   "main": "index.js",
   "scripts": {
